@@ -18,7 +18,7 @@ timezone: America/Los_Angeles
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title:./SecOps                          # the main title
+title: ./SecOps                          # the main title
 
 tagline: gsmaciel's security stuff   # it will display as the sub-title
 
