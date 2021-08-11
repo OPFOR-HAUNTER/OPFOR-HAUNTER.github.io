@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 #sidebar{
 	background-color: #343a40;
 }
-.site-title{
+#sidebar .site-title a{
 	color: #b5e853 !important ;
 }
 #sidebar a{
@@ -41,4 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 #sidebar .nav-item.active .nav-link{
 
 	color: #b5e853;
-}	
+}
+##sidebar #avatar>a{
+	color: #b5e853;
+
+}
