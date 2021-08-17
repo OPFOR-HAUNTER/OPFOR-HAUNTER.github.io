@@ -20,7 +20,7 @@ timezone: America/Los_Angeles
 
 title: ./SecOps                          # the main title
 
-tagline: gsmaciel's security stuff   # it will display as the sub-title
+tagline: griever's security stuff   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A blog with an offensive security focus.
@@ -28,23 +28,23 @@ description: >-                        # used by seo meta and the atom feed
   pentesting glory.  
   
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://gsmaciel.github.io'
+url: 'https://griever3.github.io'
 
 github:
-  username: gsmaciel             # change to your github username
+  username: griever3             # change to your github username
 
 twitter:
-  username: gsmaciel            # change to your twitter username
+  username: griever3            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Gualberto_S_Maciel
+  name: Gualberto S. Maciel
   email: gualberto.s.maciel@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/gsmaciel      # change to your twitter homepage
-    - https://github.com/gsmaciel      # change to your github homepage
+    - https://twitter.com/griever      # change to your twitter homepage
+    - https://github.com/griever3      # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/gsmaciel
