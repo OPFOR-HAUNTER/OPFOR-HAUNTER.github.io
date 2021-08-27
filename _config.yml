@@ -18,23 +18,24 @@ timezone: America/Los_Angeles
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: ./SecOps                          # the main title
+title: ./OpposingForce                          # the main title
 
-tagline: griever's security stuff   # it will display as the sub-title
+tagline: HAUNTER's SecOps stuff   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A blog with an offensive security focus.
-  Documenting Road to OSCP and 
-  pentesting glory.  
+  Documenting my road to the OSCP, and hopefully
+  sharing some helpful knowledge to other aspiring
+  pentesters/red operators.  
   
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://griever3.github.io'
+url: 'https://OPFOR-HAUNTER.github.io'
 
 github:
-  username: griever3             # change to your github username
+  username: OPFOR-HAUNTER             # change to your github username
 
 twitter:
-  username: griever3            # change to your twitter username
+  username: OPFOR-HAUNTER            # change to your twitter username
 
 social:
   # Change to your full name.
@@ -43,8 +44,8 @@ social:
   email: gualberto.s.maciel@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/griever      # change to your twitter homepage
-    - https://github.com/griever3      # change to your github homepage
+    - https://twitter.com/OPFOR-HAUNTER      # change to your twitter homepage
+    - https://github.com/OPFOR-HAUNTER      # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/gsmaciel
