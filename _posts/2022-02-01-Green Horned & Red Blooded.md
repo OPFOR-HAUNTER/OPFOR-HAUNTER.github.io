@@ -2,24 +2,17 @@
 layout: post
 title: "Green-horned & Red-Blooded"
 date: 2022-02-01
-categories: /dev/null,meta
+categories: meta
+tags: /dev/null meta
 ---
-# Green-Horned & Red-Blooded
-
-Tags: Test Tag
-
-A conversation with Ray Garcia, Jonathan Gold, Evan Kleiman, Bricia Lopez, and Carlos Salgado about the evolving role of Mexican cuisine in LA as culture, art, and craft
-
-Source: [Food Icons on the Evolving Role of Mexican Cuisine in LA](http://blogs.getty.edu/iris/5-food-icons-on-the-evolving-role-of-mexican-cuisine-in-la/)
 
 
-
-# I am become n00b, creator of Hello Worlds
+## I am become n00b, creator of Hello Worlds
 
 
 After a decade of working in IT, it always amazes me how much more there is to learn. If you are just starting out or relatively fresh to the industry, then my insight to you is this:
 
-`complacency is the harbinger of stagnation
+'complacency is the harbinger of stagnation'
 
 **Complacency** is the death of curiousity and aspiration, any desire to learn new skills is abondoned. One can become too comfortable when occupying a role. This is especially true as [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)  is rampant among us. If one manages to finally overcome it, then it would be natural to nest into the role that has finally been mastered. After all, confidence in your ability makes your comfortable, right?
 
