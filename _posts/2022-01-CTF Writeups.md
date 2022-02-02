@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "CTF Writeups"
 date: 2022-02-01
 categories: ctf RedOps writeups
