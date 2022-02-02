@@ -7,7 +7,7 @@ order: 4
 
 > tl;dr: I’ve had a very diverse IT career, and I am now throwing the gauntlet down to pursue my goal to become ~~the hokage~~ a red team professional.
 > 
-![A ninja of the digital shadows]('/assets/img/naruto-uzumaki-believe-it.gif')
+<img src='/assets/img/naruto-uzumaki-believe-it.gif' alt='A ninja of digital shadows'/>
 
 
 ## Where does Opposing Force (OPFOR) come from?
@@ -15,7 +15,7 @@ order: 4
 “[An **opposing force** (alternatively **enemy force**, abbreviated **OPFOR**) is a military unit tasked with representing an enemy, usually for training purposes in war game scenarios.](https://en.wikipedia.org/wiki/Opposing_force)”
 
 Seems pretty on-the-nose for a red team oriented blog, right?
-![Source: I forgot where I stole this image from]('/assets/img/ff4117d132875174b30771dcdc8a5eb7.png')
+<src img='/assets/img/ff4117d132875174b30771dcdc8a5eb7.png' alt='FLAG TAKEN, FLAG LOST'/>
 I'll be covering various red team concepts, scripts, tools, etc. Blue team stuff will also be touched on, as well as CTF writeups and other related things. 
 
 I believe that if you can explain a concept to someone else, then you have cemented that knowledge and understand it. Maybe I can also share something that can help others move forward, too. In any case, this blog is a tool I’ll be using for self-accountability toward my goal, and help retain the vast amount of stuff in my smooth brain.
