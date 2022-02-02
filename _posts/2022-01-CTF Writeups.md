@@ -2,7 +2,7 @@
 layout: post
 title: "CTF Writeups"
 date: 2022-02-01
-categories: ctf RedOps writeups
+categories: ctf
 tags: ctf htb thm vhl pg otw
 ---
 
