@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "Green-horned & Red-Blooded"
+layout: page
+title: "CTF Writeups"
 date: 2022-02-01
-categories: meta
-tags: /dev/null meta
+categories: ctf RedOps writeups
+tags: ctf htb thm vhl pg otw
 ---
 
 
