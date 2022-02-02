@@ -11,7 +11,7 @@ Tags: /dev/null meta
 > tl;dr: I’ve had a very diverse IT career, and I am now throwing the gauntlet down in my goal to become ~~the hokage~~ a red team professional.
 > 
 
-![A ninja of the digital shadows](The%20Road%20to%20Offensive%20Apotheosis%201187a66cc1464c55bb7f66636da88b5a/naruto-uzumaki-believe-it.gif)
+![A ninja of the digital shadows](images/naruto-uzumaki-believe-it.gif)
 
 A ninja of the digital shadows
 
@@ -59,4 +59,4 @@ Thanks for reading.
 
 Haunter
 
-![ff4117d132875174b30771dcdc8a5eb7.png](The%20Road%20to%20Offensive%20Apotheosis%201187a66cc1464c55bb7f66636da88b5a/ff4117d132875174b30771dcdc8a5eb7.png)
+![ff4117d132875174b30771dcdc8a5eb7.png](images/ff4117d132875174b30771dcdc8a5eb7.png)
