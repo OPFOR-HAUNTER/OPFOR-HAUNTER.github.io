@@ -5,7 +5,7 @@ date: 2022-02-02
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup
 ---
-Starting Point premiered on HTB in 2020 as an itroductory path to pentesting. You can find the release article [here](https://www.hackthebox.com/newsroom/starting-point).
+Starting Point premiered on HTB in 2020 as an introductory path to pentesting. You can find the release article [here](https://www.hackthebox.com/newsroom/starting-point).
 
 ## Tier
 ---
