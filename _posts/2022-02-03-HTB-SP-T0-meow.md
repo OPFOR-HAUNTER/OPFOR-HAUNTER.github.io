@@ -5,7 +5,7 @@ date: 2022-02-03
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy
 ---
-<img src='/assets/ctf/htb/sp/tier0/meow/_meow.PNG'/>
+<img src='/assets/ctf/htb/sp/tier0/meow/meow.PNG'/>
 
 ## Introduction
 
@@ -17,17 +17,17 @@ So let's begin.
 
 Let's spawn the machine and launch our local vpn client:
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/_1ovpn.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/meow/1ovpn.png'/>
 `sudo openvpn /path/to/your/file.ovpn`
 
 Now let's confirm we can see the machine with a ping.
 
 Set the machine's IP to a variable first. You'll want to make this a habit :)
 
-![](/assets/img/ctf/htb/sp/tier0/meow/_2ip.PNG)
+![](/assets/img/ctf/htb/sp/tier0/meow/2ip.PNG)
 
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/_3ping.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/meow/3ping.png'/>
 
 ### The Tasklist
 
