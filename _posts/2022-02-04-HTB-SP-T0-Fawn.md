@@ -23,77 +23,95 @@ I've confirmed the target is reachable with a `ping`.
 
 Unlike the last machine, let's do our default `nmap` scan now and store the results in `recon/all` again and move on to the tasklist.
 
+
 ## The Tasklist
 
-Now that we've established a connection, let's get started on the tasks. These tasks are meant to educate, so make sure you take the extra time to research more about any tasks you are unfamiliar with.
-
 ### Task 1
-####  What does the acronym VM stand for?
-**V**irtual **M**achine. You can read my VM config guide ![here]()
+#### What does the 3-letter acronym FTP stand for? 
+The next couple of questions are related to `FTP`. Let's run `man ftp | less`.
+
+<img src='/assets/img/ctf/sp/tier0/fawn/4manftp.PNG'/>
+
+We can see the description for `FTP` is 'an internet file transfer program'. However, the answer we are looking for is further on and is `File Transfer Protocol`.
 
 ### Task 2
-#### What tool do we use to interact with the operating system in order to start our VPN connection? 
-The **Terminal**. You should be living and breathing inside a terminal everyday imo.
+#### What communication model does FTP use, architecturally speaking? 
+FTP uses the `client-server model`. In this model, `clients` typically are endpoint systems used by people to conduct tasks and look at Reddit. `Servers` can also be endpoint systems, but are typically standalone systems that run the `FTP service` for `client(s)` to connect and upload/download files. 
 
 ### Task 3
-####What service do we use to form our VPN connection?
-**Openvpn** 
+#### What is the name of one popular GUI FTP program?
+`FileZilla` is a widely used GUI FTP program. 
 
 ### Task 4 
-#### What is the abreviated name for a tunnel interface in the output of your VPN boot-up sequence output? 
-**tun** is short for tunnel.
+#### Which port is the FTP service active on usually?
+`FTP` runs off `port 23/TCP` by default.
 
 ### Task 5
-#### What tool do we use to test our connection to the target?
-**ping**, we did this at the end of the connection section.
+#### What acronym is used for the secure version of FTP? 
+Secure FTP is known as `SFTP`. Crazy right?
 
 ## Our First Scan
 ### Task 6
-#### What is the name of the tool we use to scan the target's ports?
-**nmap**, TryHackMe has a great room on this tool [here](https://tryhackme.com/room/furthernmap). This will be one of your most used tools, so get intimate with it!
+#### What is the command we can use to test our connection to the target?
+We should already know that this tool is the `ping` command.
 
 ### Task 7
-#### What service do we identify on port 23/tcp during our scans?
-We should run a default scan from now on once we've established network visibility, as we did earlier. We'll run the following nmap scan as a default:
+#### From your scans, what version is FTP running on the target?
+Let's take a look at our scan results from earlier (remember you can use `cat [filename] | less` to print the contents of a file in a paginated fashion if you stored your results in a file).
 
-`nmap -v -T4 -A -oA recon/all $target`
+<img src='/assets/img/htb/ctf/sp/tier0/fawn/2nmap.PNG' />
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/4nmap.png' style='display:block;'/>
+We ran 	`nmap` with the `-A` flag earlier, which runs service detection (among other things).
 
-`-v`: enable verbose mode. Make this another habit so we always have more info.
-`-T4`: time/throttle speed for the scan. Range is 0 to 5, with 0 being the slowest and 5 the fastest. Slow is more reliable & less 'loud', but can take a considerable amount of time. 5 is extremely fast, but can be inaccurate and trigger many IDS/IPS alerts.
-`-oA recon/all`: This flag combined with A will output the scan results into files in folder 'recon'. This folder must exist before the scan is ran, and can also represent a full dir path. The A stands for 'all' and will create three files formatted each for nmap, xml, and gnmap. See the below image at #1.
+We always want to pay attention to the section below that details detected services and ports:
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/5nmap_resultscan.png' style='display:block;'/>
+<img src='/assets/img/htb/ctf/sp/tier0/fawn/5nmap_service.PNG'/>
 
-We can view the results by running the following command (above picture at #2):
-`cat recon/all.nmap | less`
-`cat`: This command outputs the contents of a file to the current terminal window. It does not knock stuff off tables without a reason.
-`|`: The 'pipe' is a powerfull tool used to redirect the output of a command to the left `cat` in this instance) to a second command on the right (`less` in this instance).
-`less`: This command let's us paginate output. This is handy, for example, if the contents of our nmap screen is too large to read on our current screen. Without `less`, we'd have to deal with scrolling through output we can be annoying in terminal. With `less`, we can go up and down the output using the `PGUP` and `PGDN` buttons respectively. Once you are done viewing, you can exit with the `q` button.
+It looks like the service `vsftpd` is running version `3.0.3`.
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/5nmap_resuls.png' style='display:block;'/>
-
-Here are our scan results. We can see that `telnet` is the service running on `port 23`.
-## Attacking
 ### Task 8
-### What username ultimately works with the remote management login prompt for the target?
-If you have not used `telnet` before, run `man telnet` to see the syntax for the command.
-
-`telnet $target` appears to be the basic syntax for attempting a connection. Let's give it a shot.
-
-<img src='/assets/img/ctf/htb/sp/tier0/meow/6telnet.png' style='display:block;'/>
-
-Great! The target is accepting attempts to authenticate. Below we try to connect without a username or password...but are shit out of luck.
-
-For a first try, always try `root`. We try it here, and success:
-
-<img src='/assets/img/ctf/htb/sp/tier0/meow/7telnet_con.png' style='display:block;'/>
+### From your scans, what OS type is running on the target?
+At the bottom of our scan results, we have data labeled `Service Info`. The OS is detailed as `Unix`.
 
 ### Task 9
 ####  Submit root flag
--Now that we are `in`, let's do a simple `**ls**` and we see our `flag.txt`. `cat` out the contents and you have gotten your first flag! 
+Now we have to get the flag, let's review some important info:
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/6ftp.PNG'/>
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/8.png' style='display:block;'/>
+What do we know?
+* `flag.txt` is located on teh FTP server.
+* The `FTP` service allows `anonymous logins`.
 
-Note: my flag is blurred out as `sharing a flag is frowned upon`, not because it's full of f-bombs or similar.
+Anon login is good to see. Let's try to connect.
+
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/7ftp_attempt.PNG'/>
+
+I tried authenticating without entering a username or password. This is clearly not what `anonymous` login means. Shit.
+
+Whever you need info, always check the tools `man` pages first.
+
+We are searching for the string `"user"` in a hope that there will be a command filter or flag related to logging in with a user account, and any special syntax needed for the command.
+
+<img '/assets/img/ctf/htb/sp/tier0/fawn/10manuser.png'/>
+
+We run `man` for `ftp` (1), but for the sake of expediency we then pipe the output and use `grep` to search through the output for the term `"user" (2)`. `grep` is an extremely useful tool used for searching for patterns, and this is a very basic use case involving a simple string. 
+At the bottom of our filtered output (3), we can see that there is an FTP-specific command `user`. This command is entered on the ftp interface and will then prompt for a username to login with. 
+
+With that knowledge, let's give it a try:
+
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/8ftp_success.png'/>
+
+1. We enter the `user` command at the `ftp` input prompt.
+2. The prompt then asks for a username, we enter `anonymous` and do not enter a password.
+3. We have joy- we are now on the FTP server.
+
+
+## Capturing the Flag
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/9get_flag.png'/>
+
+1. First thing to do is look at our current directory with `ls`. There is one file listed- our `flag.txt`. 
+2. If you try to `cat` the contents of the `flag.txt` file, you may get an error. Remember that some tools that are available on your local system may not be installed on a remote system. We use `get flag.txt` to download the file to oour local system in this case.
+3. The file downloads successfully, let's get the contents.
+4. Use the `exit` command to terminate the FTP session
+5. With a local `ls`, we see that `flag.txt` was downloading in the directory we initiated the FTP session in.
+6. We `cat` the flag and have owned `Fawn` successfully.
