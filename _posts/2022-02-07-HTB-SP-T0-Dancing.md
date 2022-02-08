@@ -61,7 +61,7 @@ We learned earlier that `SMB` uses a `client-server model`. The `smbclient` tool
 ### Task 6
 #### What is the `flag` or `switch` we can use with the SMB tool to `list` the contents of the share?
 
-Time to `man`-up again. GET IT?! :|
+Time to **man**-up again. GET IT?! :|
 
 `man smbclient | grep list`
 
@@ -77,7 +77,7 @@ We find that the `-L` switch is what we are looking for.
 Now it's time to access the target. 
 
 `smbclient -L $target`
-<img src='/asset/img/ctf/htb/sp/tier0/dancing/6smb_L.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/dancing/6smb_L.png'/>
 
 There are 4 listed shares:
 * `ADMIN$`
@@ -118,5 +118,5 @@ Let's find the flag to download.
 
 ### Task 9
 ####  Submit root flag
-5. Now back in our local session, we find the flag we downloaded and `cat` out the value. And now `Dancing` has been owned.
+Now back in our local session, we find the flag we downloaded and `cat` out the value. And now `Dancing` has been owned (#5 in the image above).
 
