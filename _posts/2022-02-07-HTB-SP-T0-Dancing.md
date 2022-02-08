@@ -61,7 +61,7 @@ We learned earlier that `SMB` uses a `client-server model`. The `smbclient` tool
 ### Task 6
 #### What is the `flag` or `switch` we can use with the SMB tool to `list` the contents of the share?
 
-Time to **man**-up again. GET IT?! :|
+Time to **man**-up again. GET IT?! 
 
 `man smbclient | grep list`
 
