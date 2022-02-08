@@ -1,7 +1,7 @@
 ---
 title: About
 icon: fas fa-info
-order: 4
+order: 5
 ---
 > tl;dr: I’ve had a very diverse IT career, and I am now throwing the gauntlet down to pursue my goal to become ~~the hokage~~ a red team professional.
 > 
