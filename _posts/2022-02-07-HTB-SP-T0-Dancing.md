@@ -65,7 +65,7 @@ Time to **man**-up again. GET IT?!
 
 `man smbclient | grep list`
 
-<img src='/assets/img/ctf/htb/sp/tier0/5smb_ls.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/dancing/5smb_ls.png'/>
 
 Recall that the `|` (read: "pipe") operator will redirect the output of the command to the left (`man smbclient`) to the command on the right (`grep list`). Also, recall that `grep` is a pattern-searching tool used to sift through output for a match. In this case, we are looking for any matches to the string "list".
 
