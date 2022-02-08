@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Meow"
 date: 2022-02-03
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy meow
+tags: ctf htb RedOps writeup easy telnet meow
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/meow/meow.PNG'/>
 

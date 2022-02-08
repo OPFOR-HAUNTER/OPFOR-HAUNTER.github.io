@@ -1,33 +1,26 @@
 ---
 layout: post
-title: "HTB Starting Point - Tier 0 - Fawn"
-date: 2022-02-04
+title: "HTB Starting Point - Tier 0 - "
+date: 2022-02-01
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy ftp fawn
+tags: ctf htb RedOps writeup easy
 ---
-<img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.PNG'/>
+<img src='/assets/img/ctf/htb/sp/tier0/.PNG'/>
 
 ## Introduction
-
-Fawn is the second in the Tier 0 Starting Point machines. This is another educational system, so I will cover the commands in-depth than I will in future machines, but will build off knowledge from the previous machine, Meow.
 
 ## Establishing a Connection
 
 Spawn the bastard and get vpn going.
 
-![The host machine IP](/assets/img/ctf/htb/sp/tier0/fawn/1ip.PNG)
-
 I've confirmed the target is reachable with a `ping`.
 
 ## Initial Scan
 
-Unlike the last machine, let's do our default `nmap` scan now and store the results in `recon/all` again and move on to the tasklist.
-
-
 ## The Tasklist
 
 ### Task 1
-#### What does the 3-letter acronym FTP stand for? 
+#### What does the 3-letter acronym SMB stand for? 
 The next couple of questions are related to `FTP`. Let's run `man ftp | less`.
 
 <img src='/assets/img/ctf/sp/tier0/fawn/4manftp.PNG'/>
@@ -92,7 +85,7 @@ Whever you need info, always check the tools `man` pages first.
 
 We are searching for the string `"user"` in a hope that there will be a command filter or flag related to logging in with a user account, and any special syntax needed for the command.
 
-<img src='/assets/img/ctf/htb/sp/tier0/fawn/10manuser.png'/>
+<img '/assets/img/ctf/htb/sp/tier0/fawn/10manuser.png'/>
 
 We run `man` for `ftp` (1), but for the sake of expediency we then pipe the output and use `grep` to search through the output for the term `"user" (2)`. `grep` is an extremely useful tool used for searching for patterns, and this is a very basic use case involving a simple string. 
 At the bottom of our filtered output (3), we can see that there is an FTP-specific command `user`. This command is entered on the ftp interface and will then prompt for a username to login with. 
