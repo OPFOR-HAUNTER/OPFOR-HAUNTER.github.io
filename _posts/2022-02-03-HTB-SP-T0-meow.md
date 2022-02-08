@@ -51,7 +51,7 @@ Now that we've established a connection, let's get started on the tasks. These t
 The **Terminal**. You should be living and breathing inside a terminal everyday imo.
 
 ### Task 3
-####What service do we use to form our VPN connection?
+#### What service do we use to form our VPN connection?
 **Openvpn** 
 
 ### Task 4 

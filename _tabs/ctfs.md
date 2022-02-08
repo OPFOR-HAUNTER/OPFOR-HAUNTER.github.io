@@ -1,5 +1,6 @@
 ---
 title: "CTF Writeups"
+icon: fas fa-info
 categories: RedOps ctf
 order: 4
 tags: ctf htb thm vhl pg otw RedOps
