@@ -87,7 +87,7 @@ We can view the results by running the following command (above picture at #2):
 `|`: The 'pipe' is a powerfull tool used to redirect the output of a command to the left `cat` in this instance) to a second command on the right (`less` in this instance).
 `less`: This command let's us paginate output. This is handy, for example, if the contents of our nmap screen is too large to read on our current screen. Without `less`, we'd have to deal with scrolling through output we can be annoying in terminal. With `less`, we can go up and down the output using the `PGUP` and `PGDN` buttons respectively. Once you are done viewing, you can exit with the `q` button.
 
-<img src='/assets/img/ctf/htb/sp/tier0/meow/5nmap_resuls.png' style='display:block;'/>
+<img src='/assets/img/ctf/htb/sp/tier0/meow/5nmap_results.png' style='display:block;'/>
 
 Here are our scan results. We can see that `telnet` is the service running on `port 23`.
 ## Attacking
