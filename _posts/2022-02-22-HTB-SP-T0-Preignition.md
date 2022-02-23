@@ -84,13 +84,63 @@ Let's check with `man gobuster` WAIT VAT ZE FECK?
 ### Task 7
 #### What page is found during our dir busting activities?
 
+Now for the fun stuff. First, here's our command syntax per the man page:
 
+`gobuster dir -u $target -w path/to/wordlist`
+
+
+##### What the fuck is a wordlist? 
+
+As the name may suggest, they are precompiled files full of words that can be used in automated recon and/or bruteforce tools.
+
+<img src='/assets/img/htb/sp/tier0/preignition/5wordlists.png'/>
+
+1. Wordlists that are included in Kali are located in `/usr/share/wordlists`. 
+2. There are different lists for different enumeration types or attacks. The two outlined here seem dir busting specific, so we will use lists from these. We will choose `dirb` first, for reasons.
+3. Within `/dirb`, there are several wordlists. `common.txt` seems like a good first candidate.
+
+Now that we have our wordlist picked, our revised command should look like this:
+
+`gobuster dir -u $target -w /usr/share/wordlists/dirb/common.txt`
+
+<img src='/assets/img/htb/sp/tier0/preignition/6results.png'/>
+
+`gobuster` ran and found `/admin.php`.
 
 ### Task 8
 #### What is the status code reported by gobuster upon finding a successful page?
+
+The above image shows that status code `200` indicates the specified page was found.
 
 ### Task 9
 ####  Submit root flag
 
 ## Capturing the Flag
+
+We now know two key pieces of intel:
+1. `TARGET` hosts a webserver on `TCP/80`. That means we can use a web browser to view pages.
+2. We know that there is a login page at `TARGET_IP/admin.php`. Sounds promising.
+
+We navigate to the default landing page (enter the host's IP in the browser bar).
+
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/7web1.png'/>
+
+The above landing page is a default page for this webserver. This can indicate the webserver hasn't been configured too much yet...meaning there could be default configurations we can exploit.
+
+Let's go to the `/admin.php` page we discovered with `gobuster`. Add the pagename to the end of the IP in the address bar.
+
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/7web2.png'/>
+
+We have an admin login page. 
+
+Now there is a chance that default login credentials will work here. It seems like a simple server stood up without any changes yet.
+
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/9defaultcreds.png'/>
+
+A quick search shows that default login creds for admin on nginx is `admin/admin`. Let's try it :)
+
+<img src='/assets/img/ctf/htb/sp/tier0/preigntion/8flag.png'/>
+
+We have joy- default creds for admin let us right in. Grab teh flag & we have cleared Tier 0.
+
 
