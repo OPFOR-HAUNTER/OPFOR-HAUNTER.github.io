@@ -30,7 +30,7 @@ Unlike the last machine, let's do our default `nmap` scan now and store the resu
 #### What does the 3-letter acronym FTP stand for? 
 The next couple of questions are related to `FTP`. Let's run `man ftp | less`.
 
-<img src='/assets/img/ctf/sp/tier0/fawn/4manftp.PNG'/>
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/4manftp.PNG'/>
 
 We can see the description for `FTP` is 'an internet file transfer program'. However, the answer we are looking for is further on and is `File Transfer Protocol`.
 
@@ -59,13 +59,13 @@ We should already know that this tool is the `ping` command.
 #### From your scans, what version is FTP running on the target?
 Let's take a look at our scan results from earlier (remember you can use `cat [filename] | less` to print the contents of a file in a paginated fashion if you stored your results in a file).
 
-<img src='/assets/img/htb/ctf/sp/tier0/fawn/2nmap.PNG' />
+<img src='/assets/img/htb/ctf/sp/tier0/fawn/3nmap.PNG' />
 
 We ran 	`nmap` with the `-A` flag earlier, which runs service detection (among other things).
 
 We always want to pay attention to the section below that details detected services and ports:
 
-<img src='/assets/img/htb/ctf/sp/tier0/fawn/5nmap_service.PNG'/>
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/5nmap_service.PNG'/>
 
 It looks like the service `vsftpd` is running version `3.0.3`.
 

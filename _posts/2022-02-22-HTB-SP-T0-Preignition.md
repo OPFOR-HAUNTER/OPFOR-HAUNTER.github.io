@@ -59,7 +59,7 @@ Results show the service name/version is `nginx 1.14.2`.
 
 We can see what's currently installed on Kali as we did before by searching `/bin/` for the term `"bust"`
 
-<img src='/assets/img/htb/sp/tier0/preignition/3lsbust.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/3lsbust.png'/>
 
 There are two options here:
 1. `dirbuster`
@@ -72,14 +72,14 @@ There are of course more options that are popular as well. For this lab, however
 
 Let's check with `man gobuster` WAIT VAT ZE FECK? 
 
-<img src='/assets/img/htb/sp/tier0/preignition/4gobusterhelp.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/4gobusterhelp.png'/>
 
 1. `gobuster` doesn't have a man page! :(
 2. Luckily, `--help` is always a viable alternative. You can also reference [this site](https://linuxcommandlibrary.com/man/gobuster) for man pages for tools.
 3. Now that we can see the tool's syntax, we see that `dir` is the switch we need to include in our command for dir busting.
 4. Take note that we can get specific command syntax with the formatting listed here. Example, `gobuster dir --help` will get you the specifc help page with additional `dir` details (see below image).
 
-<img src='/assets/img/htb/sp/tier0/preignition/4gobusterhelp2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/4gobusterhelp2.png'/>
 
 ### Task 7
 #### What page is found during our dir busting activities?
@@ -93,7 +93,7 @@ Now for the fun stuff. First, here's our command syntax per the man page:
 
 As the name may suggest, they are precompiled files full of words that can be used in automated recon and/or bruteforce tools.
 
-<img src='/assets/img/htb/sp/tier0/preignition/5wordlists.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/5wordlists.png'/>
 
 1. Wordlists that are included in Kali are located in `/usr/share/wordlists`. 
 2. There are different lists for different enumeration types or attacks. The two outlined here seem dir busting specific, so we will use lists from these. We will choose `dirb` first, for reasons.
@@ -103,7 +103,7 @@ Now that we have our wordlist picked, our revised command should look like this:
 
 `gobuster dir -u $target -w /usr/share/wordlists/dirb/common.txt`
 
-<img src='/assets/img/htb/sp/tier0/preignition/6results.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/6results.png'/>
 
 `gobuster` ran and found `/admin.php`.
 
