@@ -139,7 +139,7 @@ Now there is a chance that default login credentials will work here. It seems li
 
 A quick search shows that default login creds for admin on nginx is `admin/admin`. Let's try it :)
 
-<img src='/assets/img/ctf/htb/sp/tier0/preigntion/8flag.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/preignition/8flag.png'/>
 
 We have joy- default creds for admin let us right in. Grab teh flag & we have cleared Tier 0.
 
