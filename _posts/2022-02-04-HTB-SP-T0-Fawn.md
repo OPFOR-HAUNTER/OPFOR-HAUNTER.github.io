@@ -59,7 +59,7 @@ We should already know that this tool is the `ping` command.
 #### From your scans, what version is FTP running on the target?
 Let's take a look at our scan results from earlier (remember you can use `cat [filename] | less` to print the contents of a file in a paginated fashion if you stored your results in a file).
 
-<img src='/assets/img/htb/ctf/sp/tier0/fawn/3nmap.PNG' />
+<img src='/assets/img/ctf/htb/sp/tier0/fawn/3nmap.PNG' />
 
 We ran 	`nmap` with the `-A` flag earlier, which runs service detection (among other things).
 
