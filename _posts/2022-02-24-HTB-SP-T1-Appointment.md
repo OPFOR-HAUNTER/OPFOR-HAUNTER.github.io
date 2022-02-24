@@ -22,6 +22,7 @@ I've confirmed the target is reachable with a `ping`.
 
 ### Task 1
 #### What does the acronym SQL stand for?
+
 `SQL` is the abbreviation for `Structured Query Language`. Many variants of it are used in a sizeable portion of the internet's databases to store, organize, and poll data efficiently. The language syntax is simple and easy to learn. 
 
 Here is a [primer to familiarize yourself](https://www.tutorialrepublic.com/sql-tutorial/).
@@ -92,6 +93,15 @@ Speaking of `dir busting`, it's time to capture our flag. Since we know this is 
 We have a few hits worth noting. Let's try and visit the `Login page` our `nmap` scan found earlier. Put the IP address in the browser:
 
 <img src='/assets/img/ctf/htb/sp/tier1/2login.png'/>
+
+We could try `bruteforcing` the login, but this server looks more configured than the last one. Let's try `SQL injection`.
+
+My experience with `SQLi` is very limited, but there must be tools on Kali. 
+
+`ls /bin/*sql*`
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/4sqltools.png'/>
+
 
 
 
