@@ -88,11 +88,11 @@ Speaking of `dir busting`, it's time to capture our flag. Since we know this is 
 
 `gobuster dir -u $target -w /usr/share/wordlists/dirb/common.txt`
 
-<img src='/assets/img/ctf/htb/sp/tier1/3gobuster.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/3gobuster.png'/>
 
 We have a few hits worth noting. Let's try and visit the `Login page` our `nmap` scan found earlier. Put the IP address in the browser:
 
-<img src='/assets/img/ctf/htb/sp/tier1/2login.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/2login.png'/>
 
 We could try `bruteforcing` the login, but this server looks more configured than the last one. Let's try `SQL injection`.
 
