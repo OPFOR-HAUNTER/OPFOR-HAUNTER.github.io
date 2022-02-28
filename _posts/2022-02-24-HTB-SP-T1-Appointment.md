@@ -102,8 +102,44 @@ My experience with `SQLi` is very limited, but there must be tools on Kali.
 
 <img src='/assets/img/ctf/htb/sp/tier1/appointment/4sqltools.png'/>
 
+`sqlmap` seems to fit the bill:
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/5sqlmap.png'/>
+
+Again, I have limited experience here but luckily the bottom on the man page lists a `--wizard` switch for dumb users like myself. 
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/6sqlmapwiz.png'/>
 
 
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/7sqlmap.png'/>
 
+1. We run the command `sqlmap --wizard`
+2. The wizard prompts for the target URL. Make sure to enter the `http://` prefix before the target IP and to also include the actual page name at the end (`index.php`)
 
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/8sqlmap.png'/>
 
+There are some options here, I've chose the default values.
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/9sqlmap.png'/>
+
+After some automatic progression, eventually we see that an injection package was successful.
+
+So the login page is definitely vulnerable to `SQL Injection`, but we need a specific package to get the flag. This part I had to look up, but the specific injection is below:
+
+`admin'#`
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/10login.png'/>
+
+We enter the injection in the `username` field and any random character in the `password` field.
+
+The logic here is that the `'` apostrophe character is not correctly sanitized out of the subitted input. Typically, special characters like this one are **escaped** so that they are not interpreted in an uniintended way.
+
+However, since the input is taken literally, the special character is interpreted by the scrip literally. Apostrophes are used to enclose string values. Once it reads the `unsername` input, it will prematurely close the string that contains the value. This begins the injection portion of the attack.
+
+With the statement prematurely closed with the `'`, the next character is also interpreted. The `#` pound/hash character is a comment character that will void out any code on the same line as the character. Typically this is used for writing comments and debugging, but here it breaks the remaining logic in the code that checks for a matching password for admin.
+
+Let's submit the injection command.
+
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/10flag.png'/>
+
+There's the flag.
