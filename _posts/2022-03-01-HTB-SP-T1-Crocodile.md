@@ -5,7 +5,7 @@ date: 2022-03-01
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy crocodile ftp
 ---
-<img src='/assets/img/ctf/htb/sp/tier1/crocodile.PNG'/>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/crocodile.PNG'/>
 
 ## Introduction
 
@@ -17,7 +17,7 @@ I've confirmed the target is reachable with a `ping`.
 
 Start the default `nmap` scan and let it run while we complete the tasklist.
 
-<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/1nmap.png'>
 
 ## The Tasklist
 
