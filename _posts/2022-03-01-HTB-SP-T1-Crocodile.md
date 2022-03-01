@@ -1,0 +1,117 @@
+---
+layout: post
+title: "HTB Starting Point - Tier 1 - Crocodile"
+date: 2022-02-24
+categories: RedOps ctf HTB
+tags: ctf htb RedOps writeup easy crocodile ftp
+---
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile.PNG'/>
+
+## Introduction
+
+## Establishing a Connection & Initial Scan
+
+Spawn the bastard and get vpn going.
+
+I've confirmed the target is reachable with a `ping`.
+
+Start the default `nmap` scan and let it run while we complete the tasklist.
+
+<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
+
+## The Tasklist
+
+### Task 1
+#### What nmap scanning switch employs the use of default scripts during a scan?
+
+`-sC`
+ 
+### Task 2
+#### What service version is found to be running on port 21?
+
+Our scan indicates FTP is running, specifically `vsftpd 3.0.3`
+
+### Task 3
+#### What FTP code is returned to us for the "Anonymous FTP login allowed" message? 
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/2ftpcon.png'/>
+
+1. We initiate the FTP connection using `ftp $target`
+2. Per our scan results, we know `Anonymous` login is allowed. We enter the `user` as such.
+3. Login is successful, we are greeted with code `230`.
+4. `ls` shows two files available locally. 
+
+### Task 4 
+#### What command can we use to download the files we find on the FTP server?
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/3ftpget.png'/>
+
+1. The `get` command is used to retrieve files from the remote server to our localhost. Remember that files will be placed in the directory you were in when you initiated the FTP connection.
+2. We download both files successfully.
+3. `exit` the FTP session
+ 
+### Task 5
+#### What is one of the higher-privilege sounding usernames in the list we retrieved?
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/4cat.png'/>
+
+We`cat` out both files. The `allowed.userlist` contains the username `admin` which is a HVT.
+
+This also means we'll need to find a login page to try and get a foothold with the account.
+
+### Task 6
+#### What version of Apache HTTP Server is running on the target host?
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/5apache.png'/>
+
+Our scan results list the version as `2.4.41`. Also, Apache runs PHP, so we are specifcally looking for a `php login page`.
+
+### Task 7
+#### What is the name of a handy web site analysis plug-in we can install in our browser?
+
+`Wappalyzer`
+
+### Task 8
+#### What switch can we use with gobuster to specify we are looking for specific filetypes?
+
+<img src='/asset/img/ctf/htb/sp/tier1/crocodile/6web.png'/>
+
+In Task 6, we deduced that we'd need to find a PHP login page. Navigating to the website via browser does not seem to be a viable way to find a login page. Let's try to do some dirbusting using `gobuster`.
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/7gobuster.png'/>
+
+Grepping the help page reveals that we can use the `-x` switch to look for filetypes with `gobuster`. 
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/8gobuster.png'/>
+
+The completed command is `gobuser dir -u $target -w /usr/wordlists/dirb/common.txt -x php`
+
+### Task 9
+#### What file have we found that can provide us a foothold on the target?
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/9gobusterresults.png'/>
+
+Gobuster found our `login.php` page :)
+
+### Task 10
+####  Submit root flag
+
+## Capturing the Flag
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/9login.png'/>
+
+I navigated to the login page, and now we want to try to login using the `admin` username we found in the `allowed.userlist` file.
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/9login2.png'/>
+
+The `allowed.userlist.passwd` file is relatively short so we can bruteforce every password value to see which works. I *think* the password values are in the same order to the usernames list. 
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/10pass.png'/>
+
+In any case, the last password value is the correct one and will let us login as `admin` to the console.
+
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/11flag.png'/>
+
+At last we have the flag.
+
+

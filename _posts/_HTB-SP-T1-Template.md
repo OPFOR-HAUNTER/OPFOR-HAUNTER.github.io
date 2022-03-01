@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HTB Starting Point - Tier 1 - Appointment "
+title: "HTB Starting Point - Tier 1 - "
 date: 2022-02-24
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy
@@ -9,13 +9,15 @@ tags: ctf htb RedOps writeup easy
 
 ## Introduction
 
-## Establishing a Connection
+## Establishing a Connection & Initial Scan
 
 Spawn the bastard and get vpn going.
 
 I've confirmed the target is reachable with a `ping`.
 
-## Initial Scan
+Start the default `nmap` scan and let it run while we complete the tasklist.
+
+<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
 
 ## The Tasklist
 
