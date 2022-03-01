@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTB Starting Point - Tier 1 - Crocodile"
-date: 2022-02-24
+date: 2022-03-01
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy crocodile ftp
 ---
