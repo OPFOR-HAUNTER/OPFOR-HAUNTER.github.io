@@ -3,11 +3,13 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Ignition"
 date: 2022-03-01
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy ignition php
+tags: ctf htb RedOps writeup easy ignition bruteforce
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/ignition/ignition.PNG'/>
 
 ## Introduction
+
+This is the 4th box in the Tier 1 series. This machine touches the topics of redirects and bruteforcing a web login. 
 
 ## Establishing a Connection & Initial Scan
 
@@ -29,24 +31,67 @@ Our scan above shows `nginx 1.14.2` on port 80. This is a webserver, so there is
 ### Task 2
 #### What is the 3-digit HTTP status code returned when you visit http://{machine IP}/?
 
-Error code `302`. According to [this KB entry](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302), this code indicates a redirect is in place.
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/2notfound.png'/>
 
+Well when we try to browse to the webpage, we get a *Server Not Found* error but I don't see an error code. 
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/3wget.png'/>
+
+Using `wget` to fetch the page, however, does report back error code `302`. According to [this KB entry](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302), this code indicates a redirect is in place.
 
 ### Task 3
 #### What is the virtual host name the webpage expects to be accessed by?
 
+The same `wget` result shows `ignition.htb` is the host.
 
 ### Task 4 
 #### What is the full path to the file on a Linux computer that holds a local list of domain name to IP address pairs?
 
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/5ping.png'>
+
+1. `pinging` the host is unsuccessful. This can be fixed with the local hosts file.
+2. The file is located at `/etc/hosts`. We have to `sudo` in order to edit it.
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/5hosts.png'>
+
+The `target IP` is paired with the `ignition.htb` on the sameline. 
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/5ping2.png'>
+
+Once the changes are saved we can test the change by `pinging` again.
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/6web.png'>
+
+We can also now visit the site in-browser.
+
 ### Task 5
 #### What is the full URL to the Magento login page?
+
+Let's dirbust.
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/7g0.png'>
+
+We found a directory called `/admin`.
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/7magento.png'>
+
+Navigating to the directory in-browser redirects us to the Magento login page at `http://ignition.htb/admin`
 
 ### Task 6
 #### What password provides access as admin to Magento?
 
+This part is a bit tricky. I tried using `hydra` to bruteforce the login, but they have account lockout enabled if bruteforcing is detected.
+
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/8login.png'>
+
+A manual bruteforce was successful after reading the Magento password requirements and narrowing down the list of passwords to use from a few different common password lists. 
+
+
 ### Task 7
 ####  Submit root flag
 
-## Capturing the Flag
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/9flag.png'>
+
+Once the correct password was found we got the flag.
+
 
