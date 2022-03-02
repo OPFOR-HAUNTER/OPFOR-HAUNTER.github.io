@@ -100,11 +100,11 @@ Gobuster found our `login.php` page :)
 
 ## Capturing the Flag
 
-<img src='/assets/img/ctf/htb/sp/tier1/crocodile/9login.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/10login.png'/>
 
 I navigated to the login page, and now we want to try to login using the `admin` username we found in the `allowed.userlist` file.
 
-<img src='/assets/img/ctf/htb/sp/tier1/crocodile/9login2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/10login2.png'/>
 
 The `allowed.userlist.passwd` file is relatively short so we can bruteforce every password value to see which works. I *think* the password values are in the same order to the usernames list. 
 
