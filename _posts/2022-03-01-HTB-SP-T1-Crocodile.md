@@ -9,6 +9,8 @@ tags: ctf htb RedOps writeup easy crocodile ftp
 
 ## Introduction
 
+This system is the third target in the Starting Point Tier 1 series. This machine features FTP.
+
 ## Establishing a Connection & Initial Scan
 
 Spawn the bastard and get vpn going.
@@ -74,11 +76,11 @@ Our scan results list the version as `2.4.41`. Also, Apache runs PHP, so we are 
 ### Task 8
 #### What switch can we use with gobuster to specify we are looking for specific filetypes?
 
-<img src='/asset/img/ctf/htb/sp/tier1/crocodile/6web.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/6web.png'/>
 
 In Task 6, we deduced that we'd need to find a PHP login page. Navigating to the website via browser does not seem to be a viable way to find a login page. Let's try to do some dirbusting using `gobuster`.
 
-<img src='/assets/img/ctf/htb/sp/tier1/crocodile/7gobuster.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/crocodile/7gobusterx.png'/>
 
 Grepping the help page reveals that we can use the `-x` switch to look for filetypes with `gobuster`. 
 
