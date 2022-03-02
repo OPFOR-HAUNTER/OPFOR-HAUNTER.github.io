@@ -19,7 +19,7 @@ I've confirmed the target is reachable with a `ping`.
 
 Start the default `nmap` scan and let it run while we complete the tasklist.
 
-<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
+<img src='/assets/img/ctf/htb/sp/tier1/ignition/1nmap.png'>
 
 ## The Tasklist
 
@@ -54,7 +54,7 @@ The same `wget` result shows `ignition.htb` is the host.
 
 <img src='/assets/img/ctf/htb/sp/tier1/ignition/5hosts.png'>
 
-The `target IP` is paired with the `ignition.htb` on the sameline. 
+The `target IP` is paired with the `ignition.htb` on the same line. 
 
 <img src='/assets/img/ctf/htb/sp/tier1/ignition/5ping2.png'>
 
