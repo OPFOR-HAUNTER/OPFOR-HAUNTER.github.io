@@ -42,14 +42,15 @@ Start the default `nmap` scan and let it run while we complete the tasklist.
 
 
 ### Task 4 
-#### What is the name of the vulnerability we test for by submitting {{7*7}}?
+#### What is the name of the vulnerability we test for by submitting `{{7*7}}`?
 `Server Side Template Injection` aka `SSTI`
-https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection
+[SSTI Injection on HackTricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
 
 ### Task 5
 #### What is the templating engine being used within Node.JS?
 `Handlebars`
-://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#handlebars-nodejsimg src='/assets/img/ctf/htb/sp/tier1/ignition/6magento.png'>
+[Handlebars Template Injection Payload on HackTricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#handlebars-nodejs)
+
 
 
 ### Task 6
