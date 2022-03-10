@@ -12,7 +12,7 @@ tags: ctf htb RedOps writeup easy bike ssti injection proxy burpsuite
 This is the 5th target in the Tier 1 lineup, and the 2nd of 3 VIP machines. Ths machine introduces `SSTI` and the use of a `proxy` to conduct the attack.
 
 
-## Establishing a Connection & Initial Scan
+## Establishing a Connection and Initial Scan
 
 Spawn the bastard and get vpn going.
 
