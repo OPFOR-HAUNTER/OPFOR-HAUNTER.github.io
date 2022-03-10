@@ -42,7 +42,7 @@ Start the default `nmap` scan and let it run while we complete the tasklist.
 
 
 ### Task 4 
-#### What is the name of the vulnerability we test for by submitting `{{7*7}}`?
+#### What is the name of the vulnerability we test for by submitting`?
 `Server Side Template Injection` aka `SSTI`
 [SSTI Injection on HackTricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
 
