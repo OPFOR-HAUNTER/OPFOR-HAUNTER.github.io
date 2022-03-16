@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HTB Starting Point - Tier 1 - Taqctics"
+title: "HTB Starting Point - Tier 1 - Tactics"
 date: 2022-02-24
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy tactics smb
