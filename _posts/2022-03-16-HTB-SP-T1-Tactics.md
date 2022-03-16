@@ -8,18 +8,15 @@ tags: ctf htb RedOps writeup easy tactics smb
 <img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.PNG'/>
 
 
-# collapsible section with markdown
-<details>
-  <summary>Click to expand!</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-</details>
-
 ## Introduction
+
+### tl;dr
+<details>
+  <summary>Click to expand spoiler!</summary>
+  
+ 	<p>Test tldr
+	`blah`</p>
+</details>
 
 ## Establishing a Connection & Initial Scan
 
