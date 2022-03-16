@@ -9,9 +9,17 @@ tags: ctf htb RedOps writeup easy telnet meow
 
 ## Introduction
 
-As this is the first in a series of introductory HTB Starting Point machines, I will take extra time covering commands and terms. This will not continue in further writeups because, well that would be boring af.
+As this is the first in a series of introductory HTB Starting Point machines, I will take extra time covering commands and terms. This will not continue in further writeups because, well that would be redundant as hell.
 
 So let's begin.
+
+### tl;dr
+
+<details>
+  <summary>Click to Expand Spoiler!</summary>
+	Telnet to the target, login as root, cat flag.
+	<img src='/assets/img/ctf/htb/sp/tier0/meow/leo.jpg'/>
+</details>
 
 ## Establishing a Connection
 
@@ -45,11 +53,11 @@ Now that we've established a connection, let's get started on the tasks. These t
 
 ### Task 1
 ####  What does the acronym VM stand for?
-`**V**irtual **M**achine`. You can read my VM config guide ![here]()
+`**V**irtual **M**achine`.
 
 ### Task 2
 #### What tool do we use to interact with the operating system in order to start our VPN connection? 
-The `Terminal. You should be living and breathing inside a terminal everyday imo.
+The `Terminal`. You should be living and breathing inside a terminal everyday imo.
 
 ### Task 3
 #### What service do we use to form our VPN connection?
