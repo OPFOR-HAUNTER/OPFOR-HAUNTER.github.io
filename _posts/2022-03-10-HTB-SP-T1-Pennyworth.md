@@ -19,7 +19,7 @@ I've confirmed the target is reachable with a `ping`.
 
 Start the default `nmap` scan and let it run while we complete the tasklist.
 
-<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
+<img src='/assets/img/ctf/htb/sp/tier1/pennyworth/1nmap.png'>
 
 ## The Tasklist
 
@@ -155,7 +155,7 @@ Once the local server was listening, I ran the Groovy script and got a reverse s
 
 `whoami` shows that the Jenkin's script runs under `root` context. Big oof.
 
-<img src="/assets/img/ctf/htb/sp/tier1/pennyworth/flag.png"/>
+<img src="/assets/img/ctf/htb/sp/tier1/pennyworth/8flag.png"/>
 
 From there I went to `root`'s home and `cat`ted the flag to pwn Pennyworth.
 
