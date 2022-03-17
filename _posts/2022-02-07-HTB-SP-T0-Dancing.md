@@ -9,6 +9,10 @@ tags: ctf htb RedOps writeup easy smb dancing
 <img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.PNG'/>
 
 
+## Introduction
+
+`Dancing` is the host we are targeting this time. It looks like `SMB` will be the theme of the day. 
+
 ### tl;dr                                      
 <details>                                                                                      
   <summary>Spoiler!</summary>                                                                                                                                                                  
@@ -18,13 +22,9 @@ tags: ctf htb RedOps writeup easy smb dancing
   3. Attempt to connec to each share with `smbclient //$target/SHARE_NAME`. Success with `WORKSHARES`
   4. `ls` into James.P's stupid drive and `get` the flag
   5. ????
-  6.  <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>
+  6.  <img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.gif'/>
   </p>                                 
 </details>      
-
-## Introduction
-
-`Dancing` is the host we are targeting this time. It looks like `SMB` will be the theme of the day. 
 
 ## Establishing a Connection
 
