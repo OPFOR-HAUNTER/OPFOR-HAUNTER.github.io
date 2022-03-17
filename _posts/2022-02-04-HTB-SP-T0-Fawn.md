@@ -7,6 +7,17 @@ tags: ctf htb RedOps writeup easy ftp fawn
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.PNG'/>
 
+### tl;dr
+<details>
+  <summary>Spoiler!</summary>
+  
+  1. `FTP` to target
+  2. username "anonymous"
+  3. `GET` flag to localhost.
+  4. ????
+  5. <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>
+</details>
+
 ## Introduction
 
 Fawn is the second in the Tier 0 Starting Point machines. This is another educational system, so I will cover the commands in-depth than I will in future machines, but will build off knowledge from the previous machine, Meow.

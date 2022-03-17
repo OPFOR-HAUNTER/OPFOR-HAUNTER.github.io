@@ -7,19 +7,23 @@ tags: ctf htb RedOps writeup easy telnet meow
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/meow/meow.PNG'/>
 
+### tl;dr
+
+<details>
+  <summary>Spoiler!</summary>
+
+	1. `Telnet` to the target
+	2. login as `root`
+	3. `cat` flag.
+	4. <img src='/assets/img/ctf/htb/sp/tier0/meow/leo.jpg'/>
+</details>
+
+
 ## Introduction
 
 As this is the first in a series of introductory HTB Starting Point machines, I will take extra time covering commands and terms. This will not continue in further writeups because, well that would be redundant as hell.
 
 So let's begin.
-
-### tl;dr
-
-<details>
-  <summary>Click to Expand Spoiler!</summary>
-	Telnet to the target, login as root, cat flag.
-	<img src='/assets/img/ctf/htb/sp/tier0/meow/leo.jpg'/>
-</details>
 
 ## Establishing a Connection
 

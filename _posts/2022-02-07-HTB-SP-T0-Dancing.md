@@ -5,7 +5,18 @@ date: 2022-02-07
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy smb dancing
 ---
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                                                                                                                  
+  1. SMB shares are available on the target.
+  2. List available shares with `smbclient -L $target`. 
+  3. Attempt to connec to each share with `smbclient //$target/SHARE_NAME`. Success with `WORKSHARES`
+  4. `ls` into James.P's stupid drive and `get` the flag
+  5. ????
+  6.  <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>                                      </details>      
+
 <img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.PNG'/>
+
 
 ## Introduction
 
