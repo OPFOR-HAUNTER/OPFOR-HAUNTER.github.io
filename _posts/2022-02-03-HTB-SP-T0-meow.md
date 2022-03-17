@@ -9,21 +9,18 @@ tags: ctf htb RedOps writeup easy telnet meow
 
 ### tl;dr
 
-<details>
-  <summary>Spoiler!</summary>
-
-	1. `Telnet` to the target
-	2. login as `root`
-	3. `cat` flag.
-	4. <img src='/assets/img/ctf/htb/sp/tier0/meow/leo.jpg'/>
-</details>
-
-
 ## Introduction
 
 As this is the first in a series of introductory HTB Starting Point machines, I will take extra time covering commands and terms. This will not continue in further writeups because, well that would be redundant as hell.
 
-So let's begin.
+<details>
+  <summary>Spoiler!</summary>
+
+	1. `Telnet` to the target. <br/>
+	2. login as `root`.<br/>
+	3. `cat` flag.<br/>
+	4. <img src='/assets/img/ctf/htb/sp/tier0/meow/leo.jpg'/>
+</details>
 
 ## Establishing a Connection
 
@@ -128,4 +125,4 @@ For a first try, always try `root`. We try it here, and success:
 
 <img src='/assets/img/ctf/htb/sp/tier0/meow/8.png' style='display:block;'/>
 
-Note: my flag is blurred out as `sharing a flag is frowned upon`, not because it's full of f-bombs or similar.
+Note: my flag is blurred out as `sharing a flag is frowned upon`, not because it's full of f-bombs or similar. OR MAYBE IT IS?!?

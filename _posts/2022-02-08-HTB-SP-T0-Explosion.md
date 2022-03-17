@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Explosion"
 date: 2022-02-08
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy explosion rdp
+tags: ctf htb RedOps writeup easy explosion rdp xfreerdp
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion.PNG'/>
 
@@ -11,6 +11,15 @@ tags: ctf htb RedOps writeup easy explosion rdp
 
 Explosion is the 4th system in the Tier 0 list, and the 1st of 2 VIP machines. `RDP` is the service theme here. 
 
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. The target is running a `RDP` server<br/>
+   2. using `xfreerdp`, we get several informative errors. We learn that we need `/cert:ignore` and `/u:administrator`<br/>          
+   3. Connection is successful and the flag is on the desktop<br/>
+   5. <figure><img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion.gif'/><figcaption>Goddamn it Moon Moon</figcaption></figure>
+</details>      
 
 ## Establishing a Connection
 
@@ -118,8 +127,6 @@ The `DOMAIN` is listed here as `EXPLOSION`. Let's enter that but leave our passw
 
 When we enter the info we get a lot of log data and the command terminates. There is too much info at once to easily parse.
 
-<img src='/assets/img/ctf/htb/sp/tier0/explosion/8loginfo.png'/>
-
  We'll take this time to create a log file and try again to see if we can get some insight on what went wrong.
 
 <img src='/assets/img/ctf/htb/sp/tier0/explosion/10log.png'/>
@@ -157,3 +164,5 @@ Note: I tried a few different default/built-in account names that Windows machin
 <img src='/assets/img/ctf/htb/sp/tier0/explosion/13flag.png'/>
 
 Upon executing the command, we got in and we can see the flag on the desktop. With that, we can wrap this one up after submitting the value.
+
+<img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion2.gif'/>
