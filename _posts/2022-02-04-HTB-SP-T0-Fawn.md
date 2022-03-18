@@ -19,7 +19,7 @@ Fawn is the second in the Tier 0 Starting Point machines. This is another educat
   2. username "anonymous". <br/>
   3. `GET` flag to localhost.<br/>
   4. ????<br/>
-  5. <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>
+  5. <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.webp'/>
 </details>
 
 
@@ -128,3 +128,6 @@ With that knowledge, let's give it a try:
 4. Use the `exit` command to terminate the FTP session
 5. With a local `ls`, we see that `flag.txt` was downloading in the directory we initiated the FTP session in.
 6. We `cat` the flag and have owned `Fawn` successfully.
+
+ <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>
+

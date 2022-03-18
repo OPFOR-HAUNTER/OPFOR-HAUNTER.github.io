@@ -3,13 +3,24 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Crocodile"
 date: 2022-03-01
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy crocodile ftp
+tags: ctf htb RedOps writeup easy crocodile ftp dirbust gobuster
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/crocodile/crocodile.PNG'/>
 
 ## Introduction
 
 This system is the third target in the Starting Point Tier 1 series. This machine features FTP.
+
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. $target is running `FTP`. Connect and login as `anonymous` (no pass)<br/>
+   2. `GET` the file `allowed.userlist`. This contains the password for `admin`<br/>          
+   3. `dirbust` the $target to find the login.php page.<br/>
+   4. Enter admin/password for the flag<br/>
+   5. <figure><img src='/assets/img/ctf/htb/sp/tier1/crocodile/crocodile.jpg'/> <figcaption></figcaption></figure>                                     
+</details>      
 
 ## Establishing a Connection & Initial Scan
 

@@ -11,12 +11,22 @@ tags: ctf htb RedOps writeup easy injection sqli
 
 We have captured 5 flags from the Tier 0 series, and are on the 1st of the Tier 1 series. This box is an introduction into SQL database injection.
 
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. dirbust to find the web login page.<br/>
+   2. use `SQLi`, specifically `admin'#`<br/>          
+   <figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/appointment2.gif'/> <figcaption></figcaption></figure>                                     
+</details>      
+
 ## Establishing a Connection & Intitial Scan
 
 Spawn the bastard and get vpn going.
 
 I've confirmed the target is reachable with a `ping`.
 
+<img src='/assets/img/ctf/htb/sp/tier1/appointment/1scan.png'/>
 
 ## The Tasklist
 
@@ -143,3 +153,5 @@ Let's submit the injection command.
 <img src='/assets/img/ctf/htb/sp/tier1/appointment/10flag.png'/>
 
 There's the flag.
+
+

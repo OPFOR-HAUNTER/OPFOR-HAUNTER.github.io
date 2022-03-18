@@ -3,13 +3,24 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Preignition"
 date: 2022-02-22
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy preignition webenum dirbuster gobuster
+tags: ctf htb RedOps writeup easy preignition webenum dirbuster gobuster defaulcreds
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/preignition/preignition.PNG'/>
 
 ## Introduction
 
 Preignition is the final box in the Tier 0 series, and the 2nd of 2 VIP machines. This lab focuses on web enumeration/dir busting.
+
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. The target hosts a webserver. Use `gobuster dir -u $target -w [WORDLIST] -x php` to enumerate PHP webpages. <br/>
+   2. `/admin.php` is found. Navigate to `$target/admin.php` in-browser.<br/>          
+   3. Search teh googles for `nginx default admin password`. The default cred pair is `admin:admin`.<br/>
+   4. Login and retrieve the flag.<br/>
+   5. <figure><img src='/assets/img/ctf/htb/sp/tier0/preignition/preignition.gif'/> <figcaption>Standard pre-ignition procedure.</figcaption></figure>
+</details>      
 
 ## Establishing a Connection & Initial Scan
 
@@ -143,4 +154,5 @@ A quick search shows that default login creds for admin on nginx is `admin/admin
 
 We have joy- default creds for admin let us right in. Grab teh flag & we have cleared Tier 0.
 
+<figure><img src='/assets/img/ctf/htb/sp/tier0/preignition/preignition2.gif'/> <figcaption>All systems green and on the rocks. Ready for takeoff!</figcaption></figure>
 

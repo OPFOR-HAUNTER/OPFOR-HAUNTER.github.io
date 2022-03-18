@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTB Starting Point - Tier 1 - Ignition"
-date: 2022-03-01
+date: 2022-03-02
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy ignition bruteforce
 ---
@@ -9,7 +9,17 @@ tags: ctf htb RedOps writeup easy ignition bruteforce
 
 ## Introduction
 
-This is the 4th box in the Tier 1 series. This machine touches the topics of redirects and bruteforcing a web login. 
+This is the 4th box in the Tier 1 series. This machine touches the topics of redirects and bruteforcing a web login, similarly to its prequel [preignition](https://opfor-haunter.github.io/posts/HTB-SP-T0-Preignition/) from Tier 0.
+
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. Enumerate via dirbusting to find the login page.<br/>
+   2. Edit the `/etc/hosts/` file to resolve to `ignition.htb` <br/>
+   3. Search for Magento default creds to login and get the flag.<br/>
+   4. <figure><img src='/assets/img/ctf/htb/sp/tier1/ignition.gif'/> <figcaption></figcaption></figure>                                     
+</details>      
 
 ## Establishing a Connection & Initial Scan
 

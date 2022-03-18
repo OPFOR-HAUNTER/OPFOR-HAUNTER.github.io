@@ -136,3 +136,4 @@ Let's find the flag to download.
 ####  Submit root flag
 Now back in our local session, we find the flag we downloaded and `cat` out the value. And now `Dancing` has been owned (#5 in the image above).
 
+<figure><img src='/assets/img/ctf/htb/sp/tier0/dancing/goths.gif'/><figcaption>Let me show you the dance of my people.</figcaption></figure>

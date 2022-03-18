@@ -3,13 +3,23 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Sequel"
 date: 2022-02-28
 categories: RedOps ctf HTB sql
-tags: ctf htb RedOps writeup easy sequel sql
+tags: ctf htb RedOps writeup easy sequel sql sqli
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/sequel/sequel.PNG'/>
 
 ## Introduction
 
 Sequel is the 2nd machine in the Starting Point Tier 1 series. And maybe it's because I'm drinking but I just realized it is likely called Sequel because the focus is SQL.
+
+### tl;dr                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                               
+   1. MariaDB is running on the target. Connect with `mysql -h $target -u root`<br/>
+   2. `show databases;`,  `use htb;`, then `show tables;` <br/>          
+   3. Lastly, `select * from config;` for the flag<br/>
+   5. <figure><img src='/assets/img/ctf/htb/sp/tier1/sequel/sequel.gif'/> <figcaption>Sometimes sequels are worth watching.</figcaption></figure>                                     
+</details>      
 
 ## Establishing a Connection & Initial Scan
 
