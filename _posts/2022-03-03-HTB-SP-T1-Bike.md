@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTB Starting Point - Tier 1 - Bike"
-date: 2022-03-02
+date: 2022-03-03
 categories: RedOps ctf HTB
 tags: ctf htb RedOps writeup easy bike ssti injection proxy burpsuite
 ---

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "HTB Starting Point - Tier 2 - Archetype"
-date: 2022-03-22
+date: 2022-03-19
 categories: RedOps ctf HTB 
-tags: ctf htb RedOps writeup easy archetype windows mssql impacket reverseshell
+tags: ctf htb RedOps writeup easy archetype windows mssql impacket reverseshell winPEAS privesc
 ---
 <img src='/assets/img/ctf/htb/sp/tier2/archetype/archetype.PNG'/>
 
@@ -29,7 +29,7 @@ I've confirmed the target is reachable with a `ping`.
 
 
 ## The Tasklist
-
+3
 ### Task 1
 ####
 

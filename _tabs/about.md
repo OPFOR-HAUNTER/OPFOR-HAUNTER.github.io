@@ -7,16 +7,18 @@ order: 5
 <details>                                                                                      
   <summary>Spoiler!</summary>                  
                        
-  Some guy wants to become ~hokage~ hackerman <br/>                                    <figure><img src='/assets/img/naruto-uzumaki-believe-it.gif' alt='A ninja of digital shadows' width='200px'/> 
+  Some guy saw Mr. Robot and wants to become <strike>hokage</strike> hackerman <br/>                                    <figure><img src='/assets/img/naruto-uzumaki-believe-it.gif' alt='A ninja of digital shadows' width='200px'/> 
  <figcaption></figcaption></figure>                                      
 </details>        
 
 
-## What is this? Why is this? 
+
+## What is this? Why is this? How dare you?
+
+Ramblings into the void about various red team concepts, scripts, tools, etc. Blue team stuff will also be touched on, as well as CTF writeups and other related things. 
 
 <figure><img src='/assets/img/ff4117d132875174b30771dcdc8a5eb7.png' alt='FLAG TAKEN, FLAG LOST' width='200px' style='display: block;'/><figcaption>"FLAG TAKEN, FLAG DROPPED, FLAG TAKEN,FLA.."</figcaption></figure>
 
-Yelling into the void about various red team concepts, scripts, tools, etc. Blue team stuff will also be touched on, as well as CTF writeups and other related things. 
 
 ## I am become n00b, creator of HelloWorlds
 
