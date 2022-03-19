@@ -23,10 +23,10 @@ title: ./OpposingForce                          # the main title
 tagline: HAUNTER's SecOps stuff   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A blog with an offensive security focus.
+  Yelling into the void about offensive security things.
   Documenting my road to the OSCP, and hopefully
   sharing some helpful knowledge to other aspiring
-  pentesters/red operators.  
+  pentesters/red team operators.  
   
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://OPFOR-HAUNTER.github.io'

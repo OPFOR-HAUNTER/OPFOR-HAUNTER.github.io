@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 2 - Archetype"
 date: 2022-03-22
 categories: RedOps ctf HTB 
-tags: ctf htb RedOps writeup easy archetype
+tags: ctf htb RedOps writeup easy archetype windows mssql impacket reverseshell
 ---
 <img src='/assets/img/ctf/htb/sp/tier2/archetype/archetype.PNG'/>
 
