@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Appointment"
 date: 2022-02-24
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy injection sqli
+tags: ctf htb RedOps writeup very_easy injection sqli
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/appointment/appointment.PNG'/>
 
@@ -17,7 +17,7 @@ We have captured 5 flags from the Tier 0 series, and are on the 1st of the Tier 
                                                                                                
    1. dirbust to find the web login page.<br/>
    2. use `SQLi`, specifically `admin'#`<br/>          
-   <figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/appointment2.gif'/> <figcaption></figcaption></figure>                                     
+   <figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/gandalf.gif'/><figcaption>"A wizard is never late, nor is he early. He arrives precisely when he means to." -Me running late, always. </figcaption></figure>                                     
 </details>      
 
 ## Establishing a Connection & Intitial Scan
@@ -154,4 +154,10 @@ Let's submit the injection command.
 
 There's the flag.
 
+<figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/appointmet2.png'/><figcaption> </figcaption></figure>
 
+
+## Lessons Learned
+
+* `bruteforce` methods may be hindered by login failure limits
+* `sqlmap` can be used to confirm if a webform is succeptible to `injection` attacks

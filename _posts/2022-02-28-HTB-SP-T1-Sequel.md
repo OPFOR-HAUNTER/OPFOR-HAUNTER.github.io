@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Sequel"
 date: 2022-02-28
 categories: RedOps ctf HTB sql
-tags: ctf htb RedOps writeup easy sequel sql sqli
+tags: ctf htb RedOps writeup very_easy sequel sql mysql
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/sequel/sequel.PNG'/>
 
@@ -18,7 +18,7 @@ Sequel is the 2nd machine in the Starting Point Tier 1 series. And maybe it's be
    1. MariaDB is running on the target. Connect with `mysql -h $target -u root`<br/>
    2. `show databases;`,  `use htb;`, then `show tables;` <br/>          
    3. Lastly, `select * from config;` for the flag<br/>
-   5. <figure><img src='/assets/img/ctf/htb/sp/tier1/sequel/sequel.gif'/> <figcaption>Sometimes sequels are worth watching.</figcaption></figure>                                     
+   5. <figure><img src='/assets/img/ctf/htb/sp/tier1/sequel/rush.webp'/> <figcaption>Rush Hour 1 & 2 are amazing. However, nobody remembers Rush Hour 3...it was **terrible**.</figcaption></figure>                                     
 </details>      
 
 ## Establishing a Connection & Initial Scan
@@ -102,3 +102,10 @@ Right, so now we have to use the above stuff to figure out how to get the flag.
 2. Said table contains some usernames and emails. All worth pillaging, but we still don't have our flag.
 3. We check the next table, `config`. The command is `SELECT * FROM config;`.
 4. This is the ticket, our flag is in this table. Nice!
+
+<figure><img src='/assets/img/ctf/htb/sp/tier1/sequel/sequel.gif'/><figcaption>A rare time that the sequel surpassed the original. </figcaption></figure>
+
+## Lessons Learned
+
+* footholds can be gained to `mysql` using `mysql -h $target -u $user`. Worth trying `root`.
+* upon gaining foothold, enumerate databases with `SHOW DATABASES;` and tables by selecting a DB `USE {DB_NAME};` and then `SHOW TABLES;`. See data with `SELECT * FROM {TABLE_NAME};`
