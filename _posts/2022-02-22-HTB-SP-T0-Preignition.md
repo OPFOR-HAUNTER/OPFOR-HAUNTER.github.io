@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Preignition"
 date: 2022-02-22
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy preignition webenum dirbuster gobuster defaulcreds
+tags: ctf htb RedOps writeup very_easy preignition web_enum dirbuster gobuster default_creds
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/preignition/preignition.PNG'/>
 
@@ -155,4 +155,10 @@ A quick search shows that default login creds for admin on nginx is `admin/admin
 We have joy- default creds for admin let us right in. Grab teh flag & we have cleared Tier 0.
 
 <figure><img src='/assets/img/ctf/htb/sp/tier0/preignition/preignition2.gif'/> <figcaption>All systems green and on the rocks. Ready for takeoff!</figcaption></figure>
+
+## Lessons Learned
+
+* `gobuster` can be used to enumerate webservers for directories, pages, and moar. Login pages/admin consoles are HVTs
+* wordlists for dirbusting, password cracking, etc. can be found in `/usr/share/wordlists`
+* search application documention or OSINT for default creds
 

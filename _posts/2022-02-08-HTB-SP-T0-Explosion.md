@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Explosion"
 date: 2022-02-08
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy explosion rdp xfreerdp
+tags: ctf htb RedOps writeup very_easy explosion rdp xfreerdp windows
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion.PNG'/>
 
@@ -165,4 +165,9 @@ Note: I tried a few different default/built-in account names that Windows machin
 
 Upon executing the command, we got in and we can see the flag on the desktop. With that, we can wrap this one up after submitting the value.
 
-<img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion2.gif'/>
+<figure><img src='/assets/img/ctf/htb/sp/tier0/explosion/explosion2.gif'/><figcaption>MRW submitting a flag</figcaption></figure>
+
+## Lessons Learned
+
+* `xfreerdp` can be used for `RDP` footholds. 
+* `WLOG` facilities can be used to help troubleshoot connection issues

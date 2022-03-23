@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Fawn"
 date: 2022-02-04
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy ftp fawn
+tags: ctf htb RedOps writeup very_easy ftp fawn
 ---
 <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.PNG'/>
 
@@ -19,7 +19,7 @@ Fawn is the second in the Tier 0 Starting Point machines. This is another educat
   2. username "anonymous". <br/>
   3. `GET` flag to localhost.<br/>
   4. ????<br/>
-  5. <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.webp'/>
+  5. <figure><img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.webp'/><figcaption>sometimes it do be like that </figcaption></figure>
 </details>
 
 
@@ -129,5 +129,9 @@ With that knowledge, let's give it a try:
 5. With a local `ls`, we see that `flag.txt` was downloading in the directory we initiated the FTP session in.
 6. We `cat` the flag and have owned `Fawn` successfully.
 
- <img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/>
+<figure><img src='/assets/img/ctf/htb/sp/tier0/fawn/fawn.gif'/><figcaption>HAUNTER's first foothold attempts, colorized 2022 </figcaption></figure>
+
+## Lessons Learned
+
+* `Anonymous FTP allowed` on an `nmap` scan is a good potential foothold vector
 

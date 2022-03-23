@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 0 - Dancing"
 date: 2022-02-07
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy smb dancing
+tags: ctf htb RedOps writeup very_easy smb dancing
 ---
 
 <img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.PNG'/>
@@ -23,7 +23,7 @@ tags: ctf htb RedOps writeup easy smb dancing
 
   4. `ls` into James.P's stupid drive and `get` the flag.<br/>
   5. ???<br/>
-  6.  <img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.gif'/><br/>
+  6.  <figure><img src='/assets/img/ctf/htb/sp/tier0/dancing/dancing.gif'/><br/><figcaption>sometimes you just gotta </figcaption></figure>
   </p>                                 
 </details>      
 
@@ -137,3 +137,9 @@ Let's find the flag to download.
 Now back in our local session, we find the flag we downloaded and `cat` out the value. And now `Dancing` has been owned (#5 in the image above).
 
 <figure><img src='/assets/img/ctf/htb/sp/tier0/dancing/goths.gif'/><figcaption>Let me show you the dance of my people.</figcaption></figure>
+
+## Lessons Learned
+
+* `SMB` can be enumerated using `smbclient -L $target`
+* the `$` symbol on shares **typically** indicates that the share will require admin privileges to access
+* files can be retrieved from the `$target` to our `localhost` for potential lateral or privec
