@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Ignition"
 date: 2022-03-02
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy ignition bruteforce
+tags: ctf htb RedOps writeup very_easy ignition bruteforce
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/ignition/ignition.PNG'/>
 
@@ -18,7 +18,7 @@ This is the 4th box in the Tier 1 series. This machine touches the topics of red
    1. Enumerate via dirbusting to find the login page.<br/>
    2. Edit the `/etc/hosts/` file to resolve to `ignition.htb` <br/>
    3. Search for Magento default creds to login and get the flag.<br/>
-   4. <figure><img src='/assets/img/ctf/htb/sp/tier1/ignition.gif'/> <figcaption></figcaption></figure>                                     
+   4. <figure><img src='/assets/img/ctf/htb/sp/tier1/ignition/ignition.gif'/> <figcaption>Reminds me of lighting my first gas BBQ grill</figcaption></figure>                                     
 </details>      
 
 ## Establishing a Connection & Initial Scan
@@ -104,4 +104,8 @@ A manual bruteforce was successful after reading the Magento password requiremen
 
 Once the correct password was found we got the flag.
 
+<figure><img src='/assets/img/ctf/htb/sp/tier1/ignition/moon.gif'/> <figcaption>GME degenerates post-ignition fulfilling The Prophecy </figcaption></figure> 
 
+## Lessons Learned
+
+* the `/etc/hosts` file can be edited to redirect our network traffic to a specific hostname
