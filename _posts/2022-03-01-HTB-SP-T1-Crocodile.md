@@ -3,7 +3,7 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Crocodile"
 date: 2022-03-01
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy crocodile ftp dirbust gobuster
+tags: ctf htb RedOps writeup very_easy crocodile ftp dirbust gobuster
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/crocodile/crocodile.PNG'/>
 
@@ -127,4 +127,8 @@ In any case, the last password value is the correct one and will let us login as
 
 At last we have the flag.
 
+<figure><img src='/assets/img/ctf/htb/sp/tier1/crocodile/croc.gif'/> <figcaption>yayyy</figcaption></figure>
 
+## Lessons Learned
+
+* getting an initial foothold via one service may lead to an elevated foothold elsewhere (FTP -> web console in this case) 
