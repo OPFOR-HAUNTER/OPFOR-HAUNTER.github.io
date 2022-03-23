@@ -154,7 +154,7 @@ Let's submit the injection command.
 
 There's the flag.
 
-<figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/appointmet2.png'/><figcaption> </figcaption></figure>
+<figure><img src='/assets/img/ctf/htb/sp/tier1/appointment/appointment2.png'/><figcaption> </figcaption></figure>
 
 
 ## Lessons Learned
