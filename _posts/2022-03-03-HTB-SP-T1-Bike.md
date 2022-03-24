@@ -20,7 +20,7 @@ This is the 5th target in the Tier 1 lineup, and the 2nd of 3 VIP machines. Ths 
    3. Use exploits from sources like [Hacktricks](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection). Encode the payloads in Decoder as "URL" and troubleshoot the responses until there is a reponse. <br/>
    4. Use the global var `process` to get `mainModule`, check `whoami` to verify `root`. <br/>
    5. `ls` to verify the flag is available, then `cat` it out. <br/>                        
-   <figure><img src='/assets/img/ctf/htb/sp/tier1/bike/bike5.gif'/> <figcaption>sHAre tHe ROaD bR0</figcaption></figure>
+   <figure><img src='/assets/img/ctf/htb/sp/tier1/bike/bike4.gif'/> <figcaption>sHAre tHe ROaD bR0</figcaption></figure>
 </details>
 
 
