@@ -69,15 +69,15 @@ I referenced Hacktricks for their `SSTI` testing methodology here: [Hacktricks S
 
 There are several expressions to try:
 
-`{{7*7}}
+`"{{7*7}}
 ${7*7}
 <%= 7*7 %>
 ${{7*7}}
-#{7*7}
+#{7*7}"
 `
 <img src='/assets/img/ctf/htb/sp/tier1/bike/4inject.png'/>
 
-After testing a few, the `{{7*7}}` expression returns some results:
+After testing a few, the `"{{7*7}}"` expression returns some results:
 
 <img src='/assets/img/ctf/htb/sp/tier1/bike/5handlebars.png'/>
 
@@ -120,11 +120,11 @@ With that done, the answer to this task is `Decoder`.
 ### Task 8
 #### When we use a payload from HackTricks to try to run system commands, we get an error back. What is "not defined" in the response error?
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/7burpequest.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/7burprequest.png'/>
 
 The next step of the attack is to load the Repeater.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/7burprequst2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/7burprequest2.png'/>
 
  We need to copy and paste the encoded payload from the Decoder tab to the Repeater, specifically the POST variable 'email'. 
 
@@ -151,7 +151,7 @@ The first global var we try is `process`. We enter the above back to the decoder
 
 ...and receive the following response when sent via the Repeater. The `process` var was in-scope!
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecoder2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8decoder2.png'/>
 
 We try again, this time getting the mainModule object.
 
@@ -175,13 +175,13 @@ Time to get the flag.
 
 <img src='/assets/img/ctf/htb/sp/tier1/bike/8decoder5.png'/>
 
-We push an `ls` to see what files are in the current directory.
+We push an `ls` to see what files are in the /root directory.
 
 <img src='/assets/img/ctf/htb/sp/tier1/bike/8response5.png'/>
 
 The flag is in the current working directory. Neat.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/8decode6.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8decoder6.png'/>
 
 `Cat` it out...
 
