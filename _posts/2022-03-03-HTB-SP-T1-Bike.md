@@ -109,7 +109,7 @@ With that done, the answer to this task is `Decoder`.
 ### Task 7
 #### In order to send special characters in our payload in an HTTP request, we'll encode the payload. What type of encoding do we use?
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdecoder.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecoder.png'/>
 
 1. This is the Decoder tab
 2.  The payload will be entered here. 
@@ -120,15 +120,15 @@ With that done, the answer to this task is `Decoder`.
 ### Task 8
 #### When we use a payload from HackTricks to try to run system commands, we get an error back. What is "not defined" in the response error?
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpequest.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpequest.png'/>
 
 The next step of the attack is to load the Repeater.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burprequst2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burprequst2.png'/>
 
  We need to copy and paste the encoded payload from the Decoder tab to the Repeater, specifically the POST variable 'email'. 
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpresponse.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpresponse.png'/>
 
 1. We hit `send` to forward the payload to the target
 2. Th target responds. We see there is an errror. Looks like `require` is not defined.
@@ -147,23 +147,23 @@ I had to look the error up. Essentially, the `require` function is out-of-scope 
 
 The first global var we try is `process`. We enter the above back to the decoder...
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpderesponse.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpderesponse.png'/>
 
 ...and receive the following response when sent via the Repeater. The `process` var was in-scope!
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdecoder2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecoder2.png'/>
 
 We try again, this time getting the mainModule object.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpderesponse3.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpderesponse3.png'/>
 
 The object is returned successfully.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdecoder4.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecoder4.png'/>
 
 Time to check who we are running as. 
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdresponse4.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdresponse4.png'/>
 
 `root`
 
@@ -173,15 +173,15 @@ Time to check who we are running as.
 
 Time to get the flag.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdecoder5.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecoder5.png'/>
 
 We push an `ls` to see what files are in the current directory.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpresponse5.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpresponse5.png'/>
 
 The flag is in the current working directory. Neat.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/6burpdecode6.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/8burpdecode6.png'/>
 
 `Cat` it out...
 
