@@ -10,16 +10,17 @@ tags: ctf htb RedOps writeup very_easy tactics smb
 
 ## Introduction
 
-Tactics is the last target in the tier 1 group. 
+Tactics is the last target in the tier 1 group. We'll be enumerating SMB again here.
 
 ### tl;dr                                                                                      
 <details>                                                                                      
   <summary>Spoiler!</summary>                                                                  
-                                                                                                  1. Enumerate via dirbusting to find the login page.<br/>                                    
-   2. Edit the `/etc/hosts/` file to resolve to `ignition.htb` <br/>
-   3. Search for Magento default creds to login and get the flag.<br/>                         
-   4. <figure><img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.jpg'/> <figcaption>Remin
-ds me of lighting my first gas BBQ grill</figcaption></figure>
+ 
+   1. Scan with the `-Pn` switch.<br/>                                    
+   2. Enumerate the `smb` shares with `smbclient -L $target -U Administrator` <br/>
+   3. Connect to `//$target/C$` and navigate to the admin's desktop<br/>
+   4. `GET flag.txt` and `cat` it locally <br/>                         
+   <figure><img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.jpeg'/> <figcaption>*Insert Kira's theme from Deathnote*</figcaption></figure>
 </details>
 
 ## Establishing a Connection & Initial Scan
