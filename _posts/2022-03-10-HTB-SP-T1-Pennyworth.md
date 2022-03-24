@@ -3,13 +3,26 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Pennywoth"
 date: 2022-03-10
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy pennyworth reverseshell bruteforce msf
+tags: ctf htb RedOps writeup very_easy pennyworth reverseshell bruteforce msf
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/pennyworth/pennyworth.PNG'/>
 
 ## Introduction
 
 Pennyworth is the 6th machine in the Tier 1 group, and the 3rd VIP box. The focus of this box is webapp bruteforcing and establishing a reverse shell.
+
+### tl;dr                                                                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                                 
+   1. Navigate in-browser to the landing page at `port 8080`<br/>                              
+   2. Capture the form metadata in Burp and note the POST `URL`, `username`, and `password` variables<br/>
+   3. Use a bruteforce tool to gain access (I used MSF). The winning ticket is `root:password`<br/>
+   4. Start a listener using `nc -lvnp 8000`<br/>
+   5. Navigate to the Scripts page once logged in. Google for a Groovy script reverse shell payload. Edit to include your `tun0` IP and port `8000`<br/>
+   6. Once connection, confirm `root` and get the flag
+   <figure><img src='/assets/img/ctf/htb/sp/tier1/pennyworth/pennyworth.webp'/><figcaption>Dang he just murdered Bruce, too.</figcaption></figure>
+</details>
 
 ## Establishing a Connection & Initial Scan
 
@@ -99,7 +112,7 @@ I logged into the web portal with the working creds. Finally I retrieved the Jen
 #### What type of script is accepted as input on the Jenkins Script Console?
 
 
-<img src="/assets/img/ctf/htb/sp/tier1/pennyworth/groovy.gif"/>
+<figure><img src="/assets/img/ctf/htb/sp/tier1/pennyworth/groovy.gif"/><figcaption>Hail to the king, baby.</figcaption</figure>
 
 `Groovy` per the screenshot above.
 
@@ -158,4 +171,14 @@ Once the local server was listening, I ran the Groovy script and got a reverse s
 <img src="/assets/img/ctf/htb/sp/tier1/pennyworth/8flag.png"/>
 
 From there I went to `root`'s home and `cat`ted the flag to pwn Pennyworth.
+
+<figure><img src='/assets/img/ctf/htb/sp/tier1/pennyworth/pennyworth.gif'/><figcaption>dang what a twist</figcaption></figure>
+
+## Lessons Learned
+
+
+* The URL on a given page does not have to match where POST data is sent to. E.g., the login URL was `/login`, where as the POST data was being sent to `/j_spring_security_check`. This is important for getting tools to work correctly.
+* `msf` has a huge DB of exploits. Check with `search` from inside the console.
+* If you can drop a file on a remote target, there is a high likelyhood of getting a reverse shell. 
+* There is a plethora of reverse shell scripts authored in many different programming languages. Google is your friend.
 
