@@ -20,7 +20,7 @@ Pennyworth is the 6th machine in the Tier 1 group, and the 3rd VIP box. The focu
    3. Use a bruteforce tool to gain access (I used MSF). The winning ticket is `root:password`<br/>
    4. Start a listener using `nc -lvnp 8000`<br/>
    5. Navigate to the Scripts page once logged in. Google for a Groovy script reverse shell payload. Edit to include your `tun0` IP and port `8000`<br/>
-   6. Once connection, confirm `root` and get the flag
+   6. Once connection, confirm `root` and get the flag<br/>
    <figure><img src='/assets/img/ctf/htb/sp/tier1/pennyworth/pennyworth.webp'/><figcaption>Dang he just murdered Bruce, too.</figcaption></figure>
 </details>
 
@@ -112,7 +112,7 @@ I logged into the web portal with the working creds. Finally I retrieved the Jen
 #### What type of script is accepted as input on the Jenkins Script Console?
 
 
-<figure><img src="/assets/img/ctf/htb/sp/tier1/pennyworth/groovy.gif"/><figcaption>Hail to the king, baby.</figcaption</figure>
+<figure><img src="/assets/img/ctf/htb/sp/tier1/pennyworth/groovy.gif"/><figcaption>Hail to the king, baby.</figcaption></figure>
 
 `Groovy` per the screenshot above.
 
