@@ -69,15 +69,15 @@ I referenced Hacktricks for their `SSTI` testing methodology here: [Hacktricks S
 
 There are several expressions to try:
 
-`"{{7*7}}
-${7*7}
-<%= 7*7 %>
-${{7*7}}
-#{7*7}"
-`
+`{{7*7}}`<br/>
+`${7*7}`<br/>
+`<%= 7*7 %>`<br/> 
+`${{7*7}}`<br/>
+`#{7*7}`<br/>
+
 <img src='/assets/img/ctf/htb/sp/tier1/bike/4inject.png'/>
 
-After testing a few, the `"{{7*7}}"` expression returns some results:
+After testing a few, the "`{{7*7}}`" expression returns some results:
 
 <img src='/assets/img/ctf/htb/sp/tier1/bike/5handlebars.png'/>
 
@@ -124,7 +124,7 @@ With that done, the answer to this task is `Decoder`.
 
 The next step of the attack is to load the Repeater.
 
-<img src='/assets/img/ctf/htb/sp/tier1/bike/7burprequest2.png'/>
+<img src='/assets/img/ctf/htb/sp/tier1/bike/7burpreques2.png'/>
 
  We need to copy and paste the encoded payload from the Decoder tab to the Repeater, specifically the POST variable 'email'. 
 
