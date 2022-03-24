@@ -3,19 +3,23 @@ layout: post
 title: "HTB Starting Point - Tier 1 - Tactics"
 date: 2022-03-16
 categories: RedOps ctf HTB
-tags: ctf htb RedOps writeup easy tactics smb
+tags: ctf htb RedOps writeup very_easy tactics smb
 ---
 <img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.PNG'/>
 
 
 ## Introduction
 
-### tl;dr
-<details>
-  <summary>Click to expand spoiler!</summary>
-  
- 	<p>Test tldr
-	`blah`</p>
+Tactics is the last target in the tier 1 group. 
+
+### tl;dr                                                                                      
+<details>                                                                                      
+  <summary>Spoiler!</summary>                                                                  
+                                                                                                  1. Enumerate via dirbusting to find the login page.<br/>                                    
+   2. Edit the `/etc/hosts/` file to resolve to `ignition.htb` <br/>
+   3. Search for Magento default creds to login and get the flag.<br/>                         
+   4. <figure><img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.jpg'/> <figcaption>Remin
+ds me of lighting my first gas BBQ grill</figcaption></figure>
 </details>
 
 ## Establishing a Connection & Initial Scan
@@ -26,41 +30,89 @@ I've confirmed the target is reachable with a `ping`.
 
 Start the default `nmap` scan and let it run while we complete the tasklist.
 
-<img src='/assets/img/ctf/htb/sp/tier1/1nmap.png'>
-
-
-
 ## The Tasklist
 
 ### Task 1
 #### Which Nmap switch can we use to enumerate machines when our packets are otherwise blocked by the Windows firewall?
 
-`nmap -Pn -A -v -T4 -oA recon/all $target`
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/1nmap.png'/>
+
+Curiously, this is the first time our default scan returned ABSOLUTELY NOTHING.
+
+Fortunately `nmap` offers a tip below to use the `-Pn` switch in this scenario.
+
+Our modified `nmap` command now reads `nmap -Pn -A -v -T4 -oA recon/all $target`
+
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/1Pnresults.png'/>
+
+We know have some intel :)
 
 ### Task 2
 #### What does the 3-letter acronym SMB stand for?
 
+`server message block`
+
 ### Task 3
 #### What port does SMB use to operate at?
+
+`445`
 
 ### Task 4 
 #### What command line argument do you give to `smbclient` to list available shares?
 
+We covered `smb` enumeration back in [Dancing](https://opfor-haunter.github.io/posts/HTB-SP-T0-Dancing/). 
+
+`-L`
+
 ### Task 5
 #### What character at the end of a share name indicates it's an administrative share?
+
+`$`
 
 ### Task 6
 #### Which Administrative share is accessible on the box that allows users to view the whole file system?
 
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/2smbclient.png'/>
+
+1. Firstly, we try to enumerate as was mentioned in Task 4. However, we did not have permissions to conduct discovery.
+2. Using -U Administrator, we were then successfully able to enumerate the shares.
+
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/2smbshare.png'/>
+
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/2c.png'/>
+
+1. I was able to connect to each of the three shares, but `ADMIN$` and `IPC$` were dead ends.
+2. `C$` was more lucrative.
+3. `ls` showed this was the answer
+
 ### Task 7
 #### What command can we use to download the files we find on the SMB Share?
 
+`GET`
 
 ### Task 8
 #### Which tool that is part of the Impacket collection can be used to get an interactive shell on the system?
+
+Impacket has a script called `psexec.py`. It is an alternative to the `smbclient` session, but it is not needed here.
 
 ### Task 9
 ####  Submit root flag
 
 ## Capturing the Flag
 
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/3flag.png'/>
+
+1. We `cd` down to `Administrator`'s Desktop
+2. `ls` reveals `flag.txt`
+3. and we download it with `GET flag.txt`
+
+<img src='/assets/img/ctf/htb/sp/tier1/tactics/4cat.png'/>
+
+Once we exit the smb session, we can `cat` the flag and call it a win.
+
+ <figure><img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.gif'/> <figcaption>I use gorilla tictacs myself</figcaption></figure>
+</details>
+
+## Lessons Learned
+
+* Impacket has a bunch of useful tools worth checking out
