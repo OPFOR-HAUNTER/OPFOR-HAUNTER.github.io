@@ -14,7 +14,7 @@ tags: ctf htb RedOps writeup very_easy redeemer redis
 <details>                                                                                      
   <summary>Spoiler!</summary>
 
-   1. Scan tartet. Redis is on TCP `6379`. <br/>                                   
+   1. Scan target. Redis is on TCP `6379`. <br/>                                   
    2. Reference HackTricks [Redis](https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis#basic-information) page.<br/>        
    3. Install `redis-tools` if applicable. Connect with `redis-cli -h $target` <br/>
    4. run `info` and look for the database that has keys (`db0`). `SELECT 0` <br/>
@@ -100,3 +100,7 @@ We now can run `SELECT 0` to query this database.
 2. Finally we use `get flag` to show the value of the flag.
 
 <img src='/assets/img/ctf/htb/sp/tier0/redeemer/redeemer.gif'/>
+
+## Lessons Learned
+
+* `HackTricks` is a great place to check for exploits/methodolog of services discovered from enumeration
