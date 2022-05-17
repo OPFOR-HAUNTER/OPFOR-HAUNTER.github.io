@@ -9,7 +9,7 @@ tags: ctf htb RedOps writeup very_easy explosion rdp xfreerdp windows
 
 ## Introduction
 
-Explosion is the 4th system in the Tier 0 list, and the 1st of 2 VIP machines. `RDP` is the service theme here. 
+Explosion is the ~~4th~~ 5th system (HTB keeps adding new machines) in the Tier 0 list, and the 1st of 2 VIP machines. `RDP` is the service theme here. 
 
 ### tl;dr                                      
 <details>                                                                                      
