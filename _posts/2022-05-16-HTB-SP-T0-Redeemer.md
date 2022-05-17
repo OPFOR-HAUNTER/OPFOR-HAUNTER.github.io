@@ -12,7 +12,8 @@ tags: ctf htb RedOps writeup very_easy redeemer redis
 
 ### tl;dr                                                                                      
 <details>                                                                                      
-  <summary>Spoiler!</summary>                                                                                                                                                                 
+  <summary>Spoiler!</summary>
+
    1. Scan tartet. Redis is on TCP `6379`. <br/>                                   
    2. Reference HackTricks [Redis](https://book.hacktricks.xyz/network-services-pentesting/6379-pentesting-redis#basic-information) page.<br/>        
    3. Install `redis-tools` if applicable. Connect with `redis-cli -h $target` <br/>
@@ -63,7 +64,7 @@ You can then verify in the `man` page for `redis-cli` or the HackTricks article 
 ### Task 6
 #### Once connected to a Redis server, which command is used to obtain the information and statistics about the Redis server?
 
-<img src='/assets/img/ctf/htb/sp/tier0/redeemer/3redisinfo.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/redeemer/3redisnfo.png'/>
 
 1. We run the connection command `redis-cli -h $target`
 2. Once connected, I ran `info`
@@ -81,7 +82,7 @@ You can then verify in the `man` page for `redis-cli` or the HackTricks article 
 ### Task 9
 #### How many keys are present inside the database with index 0?
 
-<img src='/assets/img/ctf/htb/sp/tier0/redeemer/3rediskeys.png'/>
+<img src='/assets/img/ctf/htb/sp/tier0/redeemer/4rediskeys.png'/>
 Scrolling through our results further, we see that there are `4` keys inside of `db0`.
 
 We now can run `SELECT 0` to query this database.
