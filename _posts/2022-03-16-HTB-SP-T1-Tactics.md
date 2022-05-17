@@ -112,7 +112,6 @@ Impacket has a script called `psexec.py`. It is an alternative to the `smbclient
 Once we exit the smb session, we can `cat` the flag and call it a win.
 
  <figure><img src='/assets/img/ctf/htb/sp/tier1/tactics/tactics.gif'/> <figcaption>I use gorilla tictacs myself</figcaption></figure>
-</details>
 
 ## Lessons Learned
 
