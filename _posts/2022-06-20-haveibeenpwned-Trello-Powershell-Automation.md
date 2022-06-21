@@ -3,10 +3,8 @@ layout: post
 title: "Automating haveibeenpwned Breach Searches with Powershell"
 date: 2022-06-20
 categories: BlueOps Detection
-tags: BlueOps detection automation powershell haveibeenpwned trello 
+tags: BlueOps detection automation powershell haveibeenpwned trello daemon api
 ---
-<img src='/assets/img/ctf/htb/sp/tier2/.PNG'/>
-
 ## Introduction
 In an effort to automate as much as possible for my organization, I created two Powershell modules to help out our team with various tasks. This use case is the automation of checking [haveibeenpwned (HIBP)](https://haveibeenpwned.com) daily and confirming if any of our enterprise users were found in a breach. The daemon scripts also creates a Trello card with breach info and affected users.
 
@@ -38,7 +36,7 @@ Lack of visibility and a unified threat alert platform for a multitude of securi
 
 At the time of authoring these scripts, the HIBP API did not have the capability of pulling an enterprise-wide call of all users found in a given breach. Instead, a SOC member would have to manually visit HIBP, enter our organization email, wait for the resulting CSV, filter the returned list by the most recent breach, and then finally verify each user. This verification part was partically cumbersome for larger breaches that may contain dozens or even hundreds of our users. 
 
-<figure><img src='/assets/img/BlueOps/Detection/HIBP/HIBP_Notification_email2.png'/><figcaption>Note that visiting the HIBP website is required to determine which accounts were expired.</figcaption>
+<figure><img src='/assets/img/BlueOps/Detection/HIBP/HIBP_Notification_email2.PNG'/><figcaption>Note that visiting the HIBP website is required to determine which accounts were expired.</figcaption>
 </figure>
 
 HIBP reports all email addresses for a given enterprise in ALL existing breaches. This requires SOC staff to manually filter a CSV for the most recent breach that was reported. Additionally, as some of these breaches may have occurred years ago many users reported could be disabled, resulting in inefficient processing time.
@@ -53,12 +51,12 @@ I created an automated daemon that runs daily. This allows us to proactively sea
 <figure><img src='/assets/img/BlueOps/Detection/HIBP/Trello_Cards.PNG'/><figcaption>Populated Trello cards. Note that the last card had a second label (blue) applied due to a high-risk factor we defined for breaches (below).</figcaption>
 </figure>
 
-There are three attributes to a breach that our SOC checks for high risk factors that require an escalated response: 
-	* BreachDate - the date it was published on the darkweb. 
-	* AddedDate - the date the breach was posted on haveibeenpwned.com.
+There are three attributes to a breach that our SOC checks for high risk factors that require an escalated response:<br/> 
+	* BreachDate - the date it was published on the darkweb. <br/>
+	* AddedDate - the date the breach was posted on haveibeenpwned.com.<br/>
 	* DataClasses - These are the types of data the breach contained. E.g., Email addresses, Credit card info, & passwords. We classify breaches with Passwords as high risk.
 
-<figure><img src='/assets/img/BlueOps/Detection/HIBP/Trello_Cards.PNG'/><figcaption>A generated card. Breach data, label, affected users are populated. User's SamAccountNames and PasswordLastSet are included in the details.</figcaption> 
+<figure><img src='/assets/img/BlueOps/Detection/HIBP/Trello_Card.PNG'/><figcaption>A generated card. Breach data, label, affected users are populated. User's SamAccountNames and PasswordLastSet are included in the details.</figcaption> 
 </figure>
 
 ## Final Thoughts
