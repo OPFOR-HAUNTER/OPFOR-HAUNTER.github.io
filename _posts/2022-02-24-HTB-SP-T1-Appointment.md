@@ -9,7 +9,7 @@ tags: ctf htb RedOps writeup very_easy injection sqli
 
 ## Introduction
 
-We have captured 5 flags from the Tier 0 series, and are on the 1st of the Tier 1 series. This box is an introduction into SQL database injection.
+We have captured 6 flags from the Tier 0 series, and are on the 1st of the Tier 1 series. This box is an introduction into SQL database injection.
 
 ### tl;dr                                      
 <details>                                                                                      
