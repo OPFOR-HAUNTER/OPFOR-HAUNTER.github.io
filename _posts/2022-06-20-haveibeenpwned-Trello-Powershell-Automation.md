@@ -32,20 +32,36 @@ In an effort to automate as much as possible for my organization, I created two 
 
 Lack of visibility and a unified threat alert platform for a multitude of security tools can lead to gaps in response time and monitoring efficiency. Currently, HIBP notifies organization via an email. Depending on many factors, this can delay the response to investigating the breach for affected users.
 
+<figure><img src='/assets/img/BlueOps/Detection/HIBP/HIBP_Notification_Email.PNG'/><figcaption>An example HIBP notification email.</figcaption>
+</figure>
+
+
 At the time of authoring these scripts, the HIBP API did not have the capability of pulling an enterprise-wide call of all users found in a given breach. Instead, a SOC member would have to manually visit HIBP, enter our organization email, wait for the resulting CSV, filter the returned list by the most recent breach, and then finally verify each user. This verification part was partically cumbersome for larger breaches that may contain dozens or even hundreds of our users. 
 
+<figure><img src='/assets/img/BlueOps/Detection/HIBP/HIBP_Notification_Email2.png'/><figcaption>Note that visiting the HIBP website is required to determine which accounts were expired.</figcaption>
+</figure>
+
 HIBP reports all email addresses for a given enterprise in ALL existing breaches. This requires SOC staff to manually filter a CSV for the most recent breach that was reported. Additionally, as some of these breaches may have occurred years ago many users reported could be disabled, resulting in inefficient processing time.
+
+<figure><img src='/assets/img/BlueOps/Detection/HIBP/HIBP_CSV_Example.PNG'/><figcaption>An example CSV that is returned from a GUI domain search. ALL breaches are returned for every user in your domain.</figcaption>
+</figure>
 
 ## The Solution
 
 I created an automated daemon that runs daily. This allows us to proactively search for a breach posted on HIBP, parse enabled users against the breach and verify those affected, and then create a Trello card with info. 
 
-
-
 There are three attributes to a breach that our SOC considers high risk factors that require an escalated response. 
 	* BreachDate - the date it was published on the darkweb. 
 	* AddedDate - the date the breach was posted on haveibeenpwned.com.
 	* DataClasses - These are the types of data the breach contained. E.g., Email addresses, Credit card info, & passwords.
+
+The API 
+
+
+`
+`
+`
+`
 
 
 
